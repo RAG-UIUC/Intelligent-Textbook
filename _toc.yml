@@ -5,9 +5,6 @@ root: intro
 chapters:
 - file: Chapter_1_What_Are_AI_Agents.ipynb
   title: Chapter 1 - What Are AI Agents?
-  sections:
-    - file: blank
-      title: "Coming Soon: More Chapters"
 
 # Uncomment and add more chapters as you create them:
 # - file: Chapter_2_Agent_Planning.ipynb
