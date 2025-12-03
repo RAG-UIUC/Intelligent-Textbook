@@ -1,0 +1,46 @@
+# Jupyter Book configuration for RAGUIUC Agentic AI Club
+
+title: Agentic Engineering Textbook
+author: RAGUIUC Agentic AI Club
+logo: logo.png
+
+# Build options
+execute:
+  execute_notebooks: force  # Execute all notebooks when building
+  timeout: 120
+  allow_errors: false
+
+# Parse options
+parse:
+  myst_enable_extensions:
+    - amsmath
+    - dollarmath
+    - linkify
+    - colon_fence
+    - deflist
+
+# HTML-specific settings
+html:
+  use_issues_button: true
+  use_repository_button: true
+  use_edit_button: true
+  baseurl: https://github.com/RAGUIUC/agentic-ai-textbook
+  comments:
+    utterances:
+      repo: "RAGUIUC/agentic-ai-textbook"
+
+# LaTeX export
+latex:
+  latex_documents:
+    targetname: book.tex
+  latex_engine: xelatex
+
+# Bibtex
+bibtex_bibfiles:
+  - references.bib
+
+# Repository
+repository:
+  url: https://github.com/RAGUIUC/agentic-ai-textbook
+  branch: main
+  path_regex: "^.*\\.ipynb$"

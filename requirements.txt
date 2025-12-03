@@ -1,0 +1,9 @@
+jupyter-book==0.15.1
+matplotlib
+numpy
+pandas
+scipy
+scikit-learn
+ipywidgets>=7.6.5
+plotly
+seaborn

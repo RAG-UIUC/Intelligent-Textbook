@@ -1,0 +1,18 @@
+# Table of Contents for Jupyter Book
+
+format: jb-book
+root: intro
+chapters:
+- file: Chapter_1_What_Are_AI_Agents.ipynb
+  title: Chapter 1 - What Are AI Agents?
+  sections:
+    - file: blank
+      title: "Coming Soon: More Chapters"
+
+# Uncomment and add more chapters as you create them:
+# - file: Chapter_2_Agent_Planning.ipynb
+#   title: Chapter 2 - Agent Planning & Reasoning
+# - file: Chapter_3_Tool_Integration.ipynb
+#   title: Chapter 3 - Tool Integration & Function Calling
+# - file: Chapter_4_Multi_Agent_Systems.ipynb
+#   title: Chapter 4 - Multi-Agent Coordination

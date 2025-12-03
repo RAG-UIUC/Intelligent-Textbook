@@ -1,0 +1,43 @@
+name: Deploy Jupyter Book to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# This job installs dependencies, builds the book, and pushes it to `gh-pages`
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    # Install dependencies
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install jupyter-book==0.15.1
+        pip install matplotlib
+        pip install numpy
+        pip install ipywidgets
+
+    # Build the book
+    - name: Build the book
+      run: |
+        jupyter-book build .
+
+    # Push the book's HTML to github-pages
+    - name: GitHub Pages action
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v3.9.3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_build/html
