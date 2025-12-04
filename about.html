@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Quick Start: Deploy Your Textbook Now &#8212; Agentic Engineering Textbook</title>
+    <title>About This Textbook &#8212; Agentic Engineering Textbook</title>
   
   
   
@@ -62,11 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'QUICKSTART';</script>
-    <link rel="canonical" href="https://rag-uiuc.github.io/Intelligent-Textbook/QUICKSTART.html" />
-    <link rel="author" title="About these documents" href="about.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'about';</script>
+    <link rel="canonical" href="https://rag-uiuc.github.io/Intelligent-Textbook/about.html" />
+    <link rel="author" title="About these documents" href="#" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How to Contribute" href="contribute.html" />
+    <link rel="prev" title="Chapter 1: What Are AI Agents?" href="chapters/01-what-are-agents/notebook.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -132,8 +134,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -172,12 +172,12 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="chapters/01-what-are-agents/index.html">Chapter 1 - What Are AI Agents?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="chapters/01-what-are-agents/notebook.html">Interactive Notebook</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="about.html">About This Textbook</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">About This Textbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">How to Contribute</a></li>
 </ul>
 
@@ -233,7 +233,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/QUICKSTART.md" target="_blank"
+      <li><a href="_sources/about.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -317,7 +317,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Quick Start: Deploy Your Textbook Now</h1>
+    <h1>About This Textbook</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -327,28 +327,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minute-setup">⚡ 5-Minute Setup</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-github-repo">1️⃣ Create GitHub Repo</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push-code-to-github">2️⃣ Push Code to GitHub</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-github-pages">3️⃣ Enable GitHub Pages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wait-for-deploy">4️⃣ Wait for Deploy</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-your-site">5️⃣ View Your Site</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mission">Mission</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-is-this-for">Who Is This For?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-ll-find-here">What You’ll Find Here</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chapters">📚 <strong>Chapters</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">📖 <strong>Structure</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-approach">🎯 <strong>Learning Approach</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-structure">📁 Project Structure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">🚀 Next Steps</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-more-chapters">Add More Chapters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-locally-optional">Test Locally (Optional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-philosophy">Design Philosophy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-agentic-ai-club">About the Agentic AI Club</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-community">Open Source &amp; Community</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technology">Technology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback-contact">Feedback &amp; Contact</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changelog">Changelog</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-0-december-2025">Version 1.0 (December 2025)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upcoming">Upcoming</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-checklist">✅ Deployment Checklist</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">🆘 Troubleshooting</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy-failed">Deploy failed?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#site-not-showing-up">Site not showing up?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#need-more-help">Need more help?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support">📞 Support</a></li>
 </ul>
             </nav>
         </div>
@@ -360,155 +357,149 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="quick-start-deploy-your-textbook-now">
-<h1>Quick Start: Deploy Your Textbook Now<a class="headerlink" href="#quick-start-deploy-your-textbook-now" title="Permalink to this heading">#</a></h1>
-<section id="minute-setup">
-<h2>⚡ 5-Minute Setup<a class="headerlink" href="#minute-setup" title="Permalink to this heading">#</a></h2>
-<section id="create-github-repo">
-<h3>1️⃣ Create GitHub Repo<a class="headerlink" href="#create-github-repo" title="Permalink to this heading">#</a></h3>
-<p>Go to <a class="github reference external" href="https://github.com/new">new</a> and create:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="about-this-textbook">
+<h1>About This Textbook<a class="headerlink" href="#about-this-textbook" title="Permalink to this heading">#</a></h1>
+<section id="mission">
+<h2>Mission<a class="headerlink" href="#mission" title="Permalink to this heading">#</a></h2>
+<p>The <strong>Agentic Engineering Intelligent Textbook</strong> is designed to teach the principles and practices of building autonomous AI systems — agents that can perceive, reason, and act to accomplish complex goals.</p>
+<p>Our mission is to make agentic engineering accessible, practical, and engaging through:</p>
 <ul class="simple">
-<li><p><strong>Repository name</strong>: <code class="docutils literal notranslate"><span class="pre">agentic-ai-textbook</span></code></p></li>
-<li><p><strong>Description</strong>: “Interactive textbook for RAGUIUC Agentic AI Club”</p></li>
-<li><p><strong>Do NOT check</strong> “Initialize with README”</p></li>
+<li><p><strong>Interactive Learning</strong> - Code you can run and modify</p></li>
+<li><p><strong>Concept-Based Structure</strong> - Organized around core ideas</p></li>
+<li><p><strong>Hands-On Practice</strong> - Real implementations you can build</p></li>
+<li><p><strong>Progressive Complexity</strong> - From basics to advanced topics</p></li>
 </ul>
-<p>Copy the HTTPS URL (e.g., <code class="docutils literal notranslate"><span class="pre">https://github.com/RAGUIUC/agentic-ai-textbook.git</span></code>)</p>
 </section>
-<section id="push-code-to-github">
-<h3>2️⃣ Push Code to GitHub<a class="headerlink" href="#push-code-to-github" title="Permalink to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/Users/ash/Desktop/RAGUIUC
-
-git<span class="w"> </span>init
-git<span class="w"> </span>add<span class="w"> </span>.
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial commit: Agentic AI Textbook&quot;</span>
-git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
-git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>YOUR_REPO_URL_HERE
-git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
-</pre></div>
-</div>
-<p>Replace <code class="docutils literal notranslate"><span class="pre">YOUR_REPO_URL_HERE</span></code> with your repository URL!</p>
+<section id="who-is-this-for">
+<h2>Who Is This For?<a class="headerlink" href="#who-is-this-for" title="Permalink to this heading">#</a></h2>
+<p>This textbook is designed for:</p>
+<ul class="simple">
+<li><p><strong>Students</strong> interested in AI and autonomous systems</p></li>
+<li><p><strong>Developers</strong> building intelligent applications</p></li>
+<li><p><strong>Researchers</strong> exploring agent architectures</p></li>
+<li><p><strong>Anyone</strong> curious about how AI agents work</p></li>
+</ul>
+<p><strong>Prerequisites:</strong> Basic Python knowledge and interest in AI. No advanced machine learning background required.</p>
 </section>
-<section id="enable-github-pages">
-<h3>3️⃣ Enable GitHub Pages<a class="headerlink" href="#enable-github-pages" title="Permalink to this heading">#</a></h3>
+<section id="what-you-ll-find-here">
+<h2>What You’ll Find Here<a class="headerlink" href="#what-you-ll-find-here" title="Permalink to this heading">#</a></h2>
+<section id="chapters">
+<h3>📚 <strong>Chapters</strong><a class="headerlink" href="#chapters" title="Permalink to this heading">#</a></h3>
+<p>Each chapter covers a major topic in agentic engineering:</p>
+<ul class="simple">
+<li><p>Concepts and theory</p></li>
+<li><p>Real-world examples</p></li>
+<li><p>Working code implementations</p></li>
+<li><p>Interactive experiments</p></li>
+<li><p>Challenge exercises</p></li>
+</ul>
+</section>
+<section id="structure">
+<h3>📖 <strong>Structure</strong><a class="headerlink" href="#structure" title="Permalink to this heading">#</a></h3>
+<p>Each chapter has two parts:</p>
 <ol class="arabic simple">
-<li><p>Go to your repository</p></li>
-<li><p><strong>Settings</strong> → <strong>Pages</strong></p></li>
-<li><p>Under “Build and deployment”:</p>
-<ul class="simple">
-<li><p>Branch: <strong>gh-pages</strong></p></li>
-<li><p>Folder: <strong>root</strong></p></li>
-</ul>
-</li>
-<li><p>Click <strong>Save</strong></p></li>
+<li><p><strong>Overview</strong> - Understand the concepts with examples</p></li>
+<li><p><strong>Interactive Notebook</strong> - Hands-on exploration and coding</p></li>
 </ol>
 </section>
-<section id="wait-for-deploy">
-<h3>4️⃣ Wait for Deploy<a class="headerlink" href="#wait-for-deploy" title="Permalink to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Go to <strong>Actions</strong> tab</p></li>
-<li><p>Watch “Deploy Jupyter Book to GitHub Pages” workflow</p></li>
-<li><p>Wait for green checkmark ✅ (takes 2-3 minutes)</p></li>
-</ol>
-</section>
-<section id="view-your-site">
-<h3>5️⃣ View Your Site<a class="headerlink" href="#view-your-site" title="Permalink to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">RAGUIUC</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">agentic</span><span class="o">-</span><span class="n">ai</span><span class="o">-</span><span class="n">textbook</span>
-</pre></div>
-</div>
-<p>Replace <code class="docutils literal notranslate"><span class="pre">RAGUIUC</span></code> with your GitHub username/org!</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="project-structure">
-<h2>📁 Project Structure<a class="headerlink" href="#project-structure" title="Permalink to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>agentic-ai-textbook/
-├── _config.yml              # Book configuration
-├── _toc.yml                 # Table of contents
-├── intro.md                 # Landing page
-├── Chapter_1_What_Are_AI_Agents.ipynb
-├── requirements.txt         # Python dependencies
-├── README.md                # Project description
-├── CONTRIBUTING.md          # How to contribute
-├── DEPLOYMENT.md            # Detailed deployment guide
-├── copilot-instructions.md  # Agent guidelines
-├── LICENSE                  # MIT license
-├── .gitignore              # Git ignore rules
-└── .github/
-    └── workflows/
-        └── deploy.yml       # Auto-deploy on push
-</pre></div>
-</div>
-</section>
-<hr class="docutils" />
-<section id="next-steps">
-<h2>🚀 Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h2>
-<section id="add-more-chapters">
-<h3>Add More Chapters<a class="headerlink" href="#add-more-chapters" title="Permalink to this heading">#</a></h3>
-<ol class="arabic">
-<li><p>Create <code class="docutils literal notranslate"><span class="pre">Chapter_2_Agent_Planning.ipynb</span></code></p></li>
-<li><p>Edit <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> to include it</p></li>
-<li><p>Commit and push:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>Chapter_2_Agent_Planning.ipynb<span class="w"> </span>_toc.yml
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add Chapter 2&quot;</span>
-git<span class="w"> </span>push
-</pre></div>
-</div>
-</li>
-<li><p>GitHub Actions automatically rebuilds! ✨</p></li>
-</ol>
-</section>
-<section id="test-locally-optional">
-<h3>Test Locally (Optional)<a class="headerlink" href="#test-locally-optional" title="Permalink to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>jupyter-book
-jupyter-book<span class="w"> </span>build<span class="w"> </span>.
-open<span class="w"> </span>_build/html/index.html
-</pre></div>
-</div>
-</section>
-</section>
-<hr class="docutils" />
-<section id="deployment-checklist">
-<h2>✅ Deployment Checklist<a class="headerlink" href="#deployment-checklist" title="Permalink to this heading">#</a></h2>
+<section id="learning-approach">
+<h3>🎯 <strong>Learning Approach</strong><a class="headerlink" href="#learning-approach" title="Permalink to this heading">#</a></h3>
+<p>We believe in learning by doing:</p>
 <ul class="simple">
-<li><p>[ ] Created GitHub repository</p></li>
-<li><p>[ ] Pushed code to GitHub</p></li>
-<li><p>[ ] Enabled GitHub Pages in settings</p></li>
-<li><p>[ ] GitHub Actions workflow completed</p></li>
-<li><p>[ ] Site is live and accessible</p></li>
-<li><p>[ ] All notebooks render correctly</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="troubleshooting">
-<h2>🆘 Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">#</a></h2>
-<section id="deploy-failed">
-<h3>Deploy failed?<a class="headerlink" href="#deploy-failed" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Check <strong>Actions</strong> tab for error details</p></li>
-<li><p>Most common: Missing Python dependency (add to <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>)</p></li>
-</ul>
-</section>
-<section id="site-not-showing-up">
-<h3>Site not showing up?<a class="headerlink" href="#site-not-showing-up" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Wait 1-2 minutes after workflow completes</p></li>
-<li><p>Hard refresh browser (Cmd+Shift+R)</p></li>
-<li><p>Check URL matches your repository name</p></li>
-</ul>
-</section>
-<section id="need-more-help">
-<h3>Need more help?<a class="headerlink" href="#need-more-help" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>See <strong><a class="reference external" href="http://DEPLOYMENT.md">DEPLOYMENT.md</a></strong> for detailed guide</p></li>
-<li><p>Check <a class="reference external" href="https://jupyterbook.org/">Jupyter Book docs</a></p></li>
+<li><p>Read concepts</p></li>
+<li><p>See code examples</p></li>
+<li><p>Run code yourself</p></li>
+<li><p>Modify and experiment</p></li>
+<li><p>Complete challenges</p></li>
 </ul>
 </section>
 </section>
+<section id="design-philosophy">
+<h2>Design Philosophy<a class="headerlink" href="#design-philosophy" title="Permalink to this heading">#</a></h2>
+<p>This intelligent textbook follows best practices from educational research:</p>
+<p><strong>Concept-Based Learning</strong> - Content organized around ideas, not topics<br />
+<strong>Active Learning</strong> - You write and run code, not just read about it<br />
+<strong>Progressive Complexity</strong> - Start simple, build to advanced topics<br />
+<strong>Real Examples</strong> - Everything grounded in practical implementations<br />
+<strong>Immediate Feedback</strong> - Run code and see results instantly</p>
+</section>
+<section id="about-the-agentic-ai-club">
+<h2>About the Agentic AI Club<a class="headerlink" href="#about-the-agentic-ai-club" title="Permalink to this heading">#</a></h2>
+<p>This textbook is created and maintained by the <strong>RAGUIUC Agentic AI Club</strong> at the University of Illinois Urbana-Champaign.</p>
+<p>We’re a community of students and researchers interested in:</p>
+<ul class="simple">
+<li><p>Building autonomous AI systems</p></li>
+<li><p>Understanding agent architectures</p></li>
+<li><p>Exploring multi-agent coordination</p></li>
+<li><p>Creating real-world AI applications</p></li>
+</ul>
+<p><strong>Join us:</strong> More information at <a class="reference external" href="https://rag-uiuc.github.io/">RAGUIUC</a></p>
+</section>
+<section id="open-source-community">
+<h2>Open Source &amp; Community<a class="headerlink" href="#open-source-community" title="Permalink to this heading">#</a></h2>
+<p>This textbook is <strong>open source</strong> and community-driven. We welcome contributions, feedback, and ideas from learners everywhere.</p>
+<p>Want to contribute? See <strong>Contribute</strong> in the navigation for guidelines.</p>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this heading">#</a></h2>
+<p>This textbook is licensed under <strong>CC BY-NC-SA 4.0</strong> (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International).</p>
+<p>You are free to:</p>
+<ul class="simple">
+<li><p>✅ Share and adapt this material</p></li>
+<li><p>✅ Use it for educational purposes</p></li>
+<li><p>✅ Build upon it for your own learning</p></li>
+</ul>
+<p>With the conditions:</p>
+<ul class="simple">
+<li><p>📋 Give credit to the authors</p></li>
+<li><p>🚫 Don’t use it for commercial purposes</p></li>
+<li><p>🔄 Share improvements with the same license</p></li>
+</ul>
+<p>See <span class="xref myst">LICENSE</span> for full details.</p>
+</section>
+<section id="technology">
+<h2>Technology<a class="headerlink" href="#technology" title="Permalink to this heading">#</a></h2>
+<p>This intelligent textbook is built with:</p>
+<ul class="simple">
+<li><p><strong>Jupyter Book</strong> - Static site generation from notebooks</p></li>
+<li><p><strong>Python</strong> - Interactive code examples</p></li>
+<li><p><strong>GitHub Pages</strong> - Hosting</p></li>
+<li><p><strong>GitHub Actions</strong> - Automated building and deployment</p></li>
+</ul>
+</section>
+<section id="feedback-contact">
+<h2>Feedback &amp; Contact<a class="headerlink" href="#feedback-contact" title="Permalink to this heading">#</a></h2>
+<p>We’d love to hear from you!</p>
+<ul class="simple">
+<li><p><strong>Questions?</strong> Each chapter includes resources and references</p></li>
+<li><p><strong>Suggestions?</strong> Have ideas to improve the textbook?</p></li>
+<li><p><strong>Bugs?</strong> Found an error or broken link?</p></li>
+<li><p><strong>Contributions?</strong> Want to add content?</p></li>
+</ul>
+</section>
 <hr class="docutils" />
-<section id="support">
-<h2>📞 Support<a class="headerlink" href="#support" title="Permalink to this heading">#</a></h2>
-<p>Questions? Open an issue or ask in the RAGUIUC Discord!</p>
-<p><strong>Congratulations!</strong> 🎉 Your textbook is now live and will auto-update every time you push!</p>
+<section id="changelog">
+<h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h2>
+<section id="version-1-0-december-2025">
+<h3>Version 1.0 (December 2025)<a class="headerlink" href="#version-1-0-december-2025" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Initial release</p></li>
+<li><p>Chapter 1: What Are AI Agents?</p></li>
+<li><p>Foundational structure and design</p></li>
+</ul>
+</section>
+<section id="upcoming">
+<h3>Upcoming<a class="headerlink" href="#upcoming" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Chapter 2: Agent Planning &amp; Reasoning</p></li>
+<li><p>Chapter 3: Tool Integration</p></li>
+<li><p>Chapter 4: Multi-Agent Systems</p></li>
+<li><p>More advanced topics</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Built with ❤️ by RAGUIUC Agentic AI Club</strong></p>
+<p><em>Making agentic engineering accessible to everyone.</em></p>
+</section>
 </section>
 </section>
 
@@ -542,6 +533,24 @@ open<span class="w"> </span>_build/html/index.html
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="chapters/01-what-are-agents/notebook.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 1: What Are AI Agents?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="contribute.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How to Contribute</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -558,28 +567,25 @@ open<span class="w"> </span>_build/html/index.html
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minute-setup">⚡ 5-Minute Setup</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-github-repo">1️⃣ Create GitHub Repo</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push-code-to-github">2️⃣ Push Code to GitHub</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-github-pages">3️⃣ Enable GitHub Pages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wait-for-deploy">4️⃣ Wait for Deploy</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-your-site">5️⃣ View Your Site</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mission">Mission</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-is-this-for">Who Is This For?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-ll-find-here">What You’ll Find Here</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chapters">📚 <strong>Chapters</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">📖 <strong>Structure</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-approach">🎯 <strong>Learning Approach</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-structure">📁 Project Structure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">🚀 Next Steps</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-more-chapters">Add More Chapters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-locally-optional">Test Locally (Optional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-philosophy">Design Philosophy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-agentic-ai-club">About the Agentic AI Club</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-community">Open Source &amp; Community</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technology">Technology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback-contact">Feedback &amp; Contact</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changelog">Changelog</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-1-0-december-2025">Version 1.0 (December 2025)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upcoming">Upcoming</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-checklist">✅ Deployment Checklist</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">🆘 Troubleshooting</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy-failed">Deploy failed?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#site-not-showing-up">Site not showing up?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#need-more-help">Need more help?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support">📞 Support</a></li>
 </ul>
   </nav></div>
 

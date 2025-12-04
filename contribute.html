@@ -1,0 +1,852 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>How to Contribute &#8212; Agentic Engineering Textbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contribute';</script>
+    <link rel="canonical" href="https://rag-uiuc.github.io/Intelligent-Textbook/contribute.html" />
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="About This Textbook" href="about.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Welcome to the Agentic Engineering Intelligent Textbook</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Agentic Engineering Textbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Agentic Engineering Textbook
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="chapters/01-what-are-agents/index.html">Chapter 1 - What Are AI Agents?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapters/01-what-are-agents/notebook.html">Interactive Notebook</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About This Textbook</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">How to Contribute</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/contribute.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>How to Contribute</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ways-to-contribute">Ways to Contribute</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improve-existing-content">1. <strong>Improve Existing Content</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-new-chapters">2. <strong>Add New Chapters</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#report-issues">3. <strong>Report Issues</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#share-feedback">4. <strong>Share Feedback</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-fork-the-repository">Step 1: Fork the Repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-clone-your-fork">Step 2: Clone Your Fork</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-create-a-branch">Step 3: Create a Branch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-make-your-changes">Step 4: Make Your Changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-commit-push">Step 5: Commit &amp; Push</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-open-a-pull-request">Step 6: Open a Pull Request</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#content-guidelines">Content Guidelines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-overview-pages-index-md">For Overview Pages (<code class="docutils literal notranslate"><span class="pre">index.md</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-interactive-notebooks">For Interactive Notebooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-style">Code Style</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-style">Writing Style</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-new-chapter">Adding a New Chapter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-folder-structure">1. Create Folder Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-overview-index-md">2. Write Overview (<code class="docutils literal notranslate"><span class="pre">index.md</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-notebook-notebook-ipynb">3. Create Notebook (<code class="docutils literal notranslate"><span class="pre">notebook.ipynb</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-table-of-contents">4. Update Table of Contents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-your-changes">5. Test Your Changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submit-pull-request">6. Submit Pull Request</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-process">Review Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helpful-resources">Helpful Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-of-conduct">Code of Conduct</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to-contribute">
+<h1>How to Contribute<a class="headerlink" href="#how-to-contribute" title="Permalink to this heading">#</a></h1>
+<p>This intelligent textbook is a community project, and we welcome your contributions!</p>
+<section id="ways-to-contribute">
+<h2>Ways to Contribute<a class="headerlink" href="#ways-to-contribute" title="Permalink to this heading">#</a></h2>
+<section id="improve-existing-content">
+<h3>1. <strong>Improve Existing Content</strong><a class="headerlink" href="#improve-existing-content" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Fix typos or errors</p></li>
+<li><p>Clarify explanations</p></li>
+<li><p>Add better examples</p></li>
+<li><p>Improve code quality</p></li>
+<li><p>Suggest better visualizations</p></li>
+</ul>
+</section>
+<section id="add-new-chapters">
+<h3>2. <strong>Add New Chapters</strong><a class="headerlink" href="#add-new-chapters" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Teach a new topic in agentic engineering</p></li>
+<li><p>Follow our <a class="reference external" href="https://github.com/RAG-UIUC/Intelligent-Textbook/blob/main/docs/STRUCTURE.md">structure guide</a></p></li>
+<li><p>Create an overview page and interactive notebook</p></li>
+<li><p>Include challenges and exercises</p></li>
+</ul>
+</section>
+<section id="report-issues">
+<h3>3. <strong>Report Issues</strong><a class="headerlink" href="#report-issues" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Found a broken link?</p></li>
+<li><p>Code doesn’t work?</p></li>
+<li><p>Concept unclear?</p></li>
+<li><p>Let us know!</p></li>
+</ul>
+</section>
+<section id="share-feedback">
+<h3>4. <strong>Share Feedback</strong><a class="headerlink" href="#share-feedback" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>What’s working well?</p></li>
+<li><p>What could be better?</p></li>
+<li><p>What topics should we add?</p></li>
+</ul>
+</section>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h2>
+<section id="step-1-fork-the-repository">
+<h3>Step 1: Fork the Repository<a class="headerlink" href="#step-1-fork-the-repository" title="Permalink to this heading">#</a></h3>
+<p>Go to <a class="reference external" href="https://github.com/RAG-UIUC/Intelligent-Textbook">GitHub</a> and fork the repository.</p>
+</section>
+<section id="step-2-clone-your-fork">
+<h3>Step 2: Clone Your Fork<a class="headerlink" href="#step-2-clone-your-fork" title="Permalink to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/YOUR-USERNAME/Intelligent-Textbook.git
+<span class="nb">cd</span><span class="w"> </span>Intelligent-Textbook
+</pre></div>
+</div>
+</section>
+<section id="step-3-create-a-branch">
+<h3>Step 3: Create a Branch<a class="headerlink" href="#step-3-create-a-branch" title="Permalink to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/your-feature-name
+</pre></div>
+</div>
+</section>
+<section id="step-4-make-your-changes">
+<h3>Step 4: Make Your Changes<a class="headerlink" href="#step-4-make-your-changes" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Edit or create files</p></li>
+<li><p>Test locally if possible</p></li>
+<li><p>Follow our content guidelines (below)</p></li>
+</ul>
+</section>
+<section id="step-5-commit-push">
+<h3>Step 5: Commit &amp; Push<a class="headerlink" href="#step-5-commit-push" title="Permalink to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Describe your changes clearly&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/your-feature-name
+</pre></div>
+</div>
+</section>
+<section id="step-6-open-a-pull-request">
+<h3>Step 6: Open a Pull Request<a class="headerlink" href="#step-6-open-a-pull-request" title="Permalink to this heading">#</a></h3>
+<p>Go to GitHub and create a pull request. Describe:</p>
+<ul class="simple">
+<li><p>What you changed and why</p></li>
+<li><p>Any relevant context</p></li>
+<li><p>If it fixes an issue, mention it</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="content-guidelines">
+<h2>Content Guidelines<a class="headerlink" href="#content-guidelines" title="Permalink to this heading">#</a></h2>
+<section id="for-overview-pages-index-md">
+<h3>For Overview Pages (<code class="docutils literal notranslate"><span class="pre">index.md</span></code>)<a class="headerlink" href="#for-overview-pages-index-md" title="Permalink to this heading">#</a></h3>
+<p>Structure your overview with:</p>
+<ol class="arabic simple">
+<li><p><strong>Title &amp; Description</strong></p>
+<ul class="simple">
+<li><p>Clear, engaging title</p></li>
+<li><p>What students will learn</p></li>
+</ul>
+</li>
+<li><p><strong>Core Concepts</strong> (3-5)</p>
+<ul class="simple">
+<li><p>Explain each concept clearly</p></li>
+<li><p>Use examples and analogies</p></li>
+<li><p>Include diagrams if helpful</p></li>
+</ul>
+</li>
+<li><p><strong>Sample Code</strong></p>
+<ul class="simple">
+<li><p>Show key implementation</p></li>
+<li><p>Keep it concise (10-20 lines)</p></li>
+<li><p>Highlight the main pattern</p></li>
+</ul>
+</li>
+<li><p><strong>Links to Notebook</strong></p>
+<ul class="simple">
+<li><p>“Explore this interactively →”</p></li>
+<li><p>Make it obvious what’s next</p></li>
+</ul>
+</li>
+<li><p><strong>Resources</strong></p>
+<ul class="simple">
+<li><p>Links to further reading</p></li>
+<li><p>References and citations</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="for-interactive-notebooks">
+<h3>For Interactive Notebooks<a class="headerlink" href="#for-interactive-notebooks" title="Permalink to this heading">#</a></h3>
+<p>Structure your notebook with:</p>
+<ol class="arabic simple">
+<li><p><strong>Introduction</strong></p>
+<ul class="simple">
+<li><p>What this notebook covers</p></li>
+<li><p>How to use it</p></li>
+<li><p>Prerequisites</p></li>
+</ul>
+</li>
+<li><p><strong>Detailed Explanations</strong></p>
+<ul class="simple">
+<li><p>Deep dive into concepts</p></li>
+<li><p>Real-world context</p></li>
+<li><p>Why it matters</p></li>
+</ul>
+</li>
+<li><p><strong>Code Examples</strong></p>
+<ul class="simple">
+<li><p>Runnable, well-commented code</p></li>
+<li><p>Multiple examples per concept</p></li>
+<li><p>Error handling</p></li>
+</ul>
+</li>
+<li><p><strong>Interactive Widgets</strong></p>
+<ul class="simple">
+<li><p>Let users experiment</p></li>
+<li><p>Adjust parameters and see results</p></li>
+<li><p>Real-time feedback</p></li>
+</ul>
+</li>
+<li><p><strong>Visualizations</strong></p>
+<ul class="simple">
+<li><p>Plots and diagrams</p></li>
+<li><p>Animations when helpful</p></li>
+<li><p>Making concepts visual</p></li>
+</ul>
+</li>
+<li><p><strong>Key Takeaways</strong></p>
+<ul class="simple">
+<li><p>Summary of main ideas</p></li>
+<li><p>What to remember</p></li>
+</ul>
+</li>
+<li><p><strong>Challenge Exercises</strong></p>
+<ul class="simple">
+<li><p>2-3 problems to solve</p></li>
+<li><p>Solutions provided (hidden)</p></li>
+<li><p>Increasing difficulty</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="code-style">
+<h3>Code Style<a class="headerlink" href="#code-style" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Use <strong>clear variable names</strong></p></li>
+<li><p>Add <strong>comments explaining logic</strong></p></li>
+<li><p>Follow <strong>PEP 8</strong> conventions</p></li>
+<li><p>Include <strong>docstrings</strong> for functions</p></li>
+<li><p>Keep <strong>examples runnable</strong> with no external dependencies</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">meaningful_function_name</span><span class="p">(</span><span class="n">parameter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Clear explanation of what this does.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        parameter: What this parameter represents</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        What the function returns</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Implementation with clear comments</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">do_something</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</section>
+<section id="writing-style">
+<h3>Writing Style<a class="headerlink" href="#writing-style" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Clear &amp; Concise</strong> - Get to the point</p></li>
+<li><p><strong>Engaging</strong> - Show why this matters</p></li>
+<li><p><strong>Progressive</strong> - Build from simple to complex</p></li>
+<li><p><strong>Accessible</strong> - Avoid jargon or explain it</p></li>
+<li><p><strong>Practical</strong> - Include real examples</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="adding-a-new-chapter">
+<h2>Adding a New Chapter<a class="headerlink" href="#adding-a-new-chapter" title="Permalink to this heading">#</a></h2>
+<section id="create-folder-structure">
+<h3>1. Create Folder Structure<a class="headerlink" href="#create-folder-structure" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>chapters/NN-chapter-name/
+├── index.md           (overview)
+└── notebook.ipynb     (interactive)
+</pre></div>
+</div>
+<p>Use zero-padded numbers (01, 02, 03) and kebab-case names.</p>
+</section>
+<section id="write-overview-index-md">
+<h3>2. Write Overview (<code class="docutils literal notranslate"><span class="pre">index.md</span></code>)<a class="headerlink" href="#write-overview-index-md" title="Permalink to this heading">#</a></h3>
+<p>Follow the content guidelines above. Make it:</p>
+<ul class="simple">
+<li><p>Standalone - explains concepts clearly</p></li>
+<li><p>Engaging - uses examples and analogies</p></li>
+<li><p>Visual - includes diagrams if helpful</p></li>
+<li><p>Linked - clearly links to the notebook</p></li>
+</ul>
+</section>
+<section id="create-notebook-notebook-ipynb">
+<h3>3. Create Notebook (<code class="docutils literal notranslate"><span class="pre">notebook.ipynb</span></code>)<a class="headerlink" href="#create-notebook-notebook-ipynb" title="Permalink to this heading">#</a></h3>
+<p>Follow the notebook guidelines above. Make it:</p>
+<ul class="simple">
+<li><p>Runnable - all code works without errors</p></li>
+<li><p>Interactive - includes widgets and controls</p></li>
+<li><p>Visual - has plots and visualizations</p></li>
+<li><p>Comprehensive - covers the topic thoroughly</p></li>
+</ul>
+</section>
+<section id="update-table-of-contents">
+<h3>4. Update Table of Contents<a class="headerlink" href="#update-table-of-contents" title="Permalink to this heading">#</a></h3>
+<p>Edit <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chapters/NN-chapter-name/index.md</span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Chapter N - Chapter Title</span>
+<span class="w">  </span><span class="nt">sections</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chapters/NN-chapter-name/notebook.ipynb</span>
+<span class="w">      </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Interactive</span><span class="nv"> </span><span class="s">Notebook:</span><span class="nv"> </span><span class="s">Deep</span><span class="nv"> </span><span class="s">Dive&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="test-your-changes">
+<h3>5. Test Your Changes<a class="headerlink" href="#test-your-changes" title="Permalink to this heading">#</a></h3>
+<p>Build locally:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>jupyter-book
+jupyter-book<span class="w"> </span>build<span class="w"> </span>.
+open<span class="w"> </span>_build/html/index.html
+</pre></div>
+</div>
+<p>Verify:</p>
+<ul class="simple">
+<li><p>✅ Navigation works</p></li>
+<li><p>✅ Links are correct</p></li>
+<li><p>✅ Code runs without errors</p></li>
+<li><p>✅ Formatting looks good</p></li>
+</ul>
+</section>
+<section id="submit-pull-request">
+<h3>6. Submit Pull Request<a class="headerlink" href="#submit-pull-request" title="Permalink to this heading">#</a></h3>
+<p>Push your changes and create a pull request!</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="review-process">
+<h2>Review Process<a class="headerlink" href="#review-process" title="Permalink to this heading">#</a></h2>
+<p>When you submit a pull request, we’ll:</p>
+<ol class="arabic simple">
+<li><p><strong>Check Quality</strong> - Does it follow guidelines?</p></li>
+<li><p><strong>Test Content</strong> - Do code examples work?</p></li>
+<li><p><strong>Verify Structure</strong> - Is the navigation correct?</p></li>
+<li><p><strong>Provide Feedback</strong> - Suggestions for improvement?</p></li>
+<li><p><strong>Merge</strong> - Your contribution goes live!</p></li>
+</ol>
+<p>This usually takes a few days. We may ask for revisions.</p>
+</section>
+<hr class="docutils" />
+<section id="helpful-resources">
+<h2>Helpful Resources<a class="headerlink" href="#helpful-resources" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.markdownguide.org/">Markdown Guide</a> - Formatting guide</p></li>
+<li><p><a class="reference external" href="https://jupyter-notebook.readthedocs.io/">Jupyter Notebook Docs</a> - Creating notebooks</p></li>
+<li><p><a class="reference external" href="https://docs.github.com/en">GitHub Help</a> - How to use GitHub</p></li>
+<li><p><a class="reference external" href="https://github.com/RAG-UIUC/Intelligent-Textbook/blob/main/docs/STRUCTURE.md">Our Structure Guide</a> - Folder organization</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="questions">
+<h2>Questions?<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Setup Issues?</strong> Check existing issues or ask in discussions</p></li>
+<li><p><strong>Content Questions?</strong> Review our guidelines above</p></li>
+<li><p><strong>Technical Help?</strong> Check GitHub documentation</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="code-of-conduct">
+<h2>Code of Conduct<a class="headerlink" href="#code-of-conduct" title="Permalink to this heading">#</a></h2>
+<p>We’re committed to providing a welcoming environment. Please be respectful and constructive in all interactions.</p>
+</section>
+<hr class="docutils" />
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this heading">#</a></h2>
+<p>By contributing, you agree that your contributions will be licensed under the same license as the project (CC BY-NC-SA 4.0).</p>
+<hr class="docutils" />
+<p><strong>Thank you for contributing to make agentic engineering accessible to everyone!</strong> 🎓</p>
+<p>Your work matters and will help students and researchers worldwide understand and build intelligent systems.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="about.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">About This Textbook</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ways-to-contribute">Ways to Contribute</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improve-existing-content">1. <strong>Improve Existing Content</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-new-chapters">2. <strong>Add New Chapters</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#report-issues">3. <strong>Report Issues</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#share-feedback">4. <strong>Share Feedback</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-fork-the-repository">Step 1: Fork the Repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-clone-your-fork">Step 2: Clone Your Fork</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-create-a-branch">Step 3: Create a Branch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-make-your-changes">Step 4: Make Your Changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-commit-push">Step 5: Commit &amp; Push</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-open-a-pull-request">Step 6: Open a Pull Request</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#content-guidelines">Content Guidelines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-overview-pages-index-md">For Overview Pages (<code class="docutils literal notranslate"><span class="pre">index.md</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-interactive-notebooks">For Interactive Notebooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-style">Code Style</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-style">Writing Style</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-new-chapter">Adding a New Chapter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-folder-structure">1. Create Folder Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-overview-index-md">2. Write Overview (<code class="docutils literal notranslate"><span class="pre">index.md</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-notebook-notebook-ipynb">3. Create Notebook (<code class="docutils literal notranslate"><span class="pre">notebook.ipynb</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-table-of-contents">4. Update Table of Contents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-your-changes">5. Test Your Changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submit-pull-request">6. Submit Pull Request</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-process">Review Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helpful-resources">Helpful Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-of-conduct">Code of Conduct</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By RAGUIUC Agentic AI Club
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
