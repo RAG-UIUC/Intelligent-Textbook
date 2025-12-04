@@ -20,13 +20,13 @@ parse:
 
 # HTML-specific settings
 html:
-  use_issues_button: true
-  use_repository_button: true
-  use_edit_button: true
+  use_issues_button: false
+  use_repository_button: false
+  use_edit_button: false
   baseurl: https://rag-uiuc.github.io/Intelligent-Textbook
-  comments:
-    utterances:
-      repo: "RAG-UIUC/Intelligent-Textbook"
+  theme: dark
+  home_page_in_navbar: true
+  announcement: "Welcome to the Agentic Engineering Intelligent Textbook"
 
 # LaTeX export
 latex:
@@ -38,8 +38,7 @@ latex:
 bibtex_bibfiles:
   - references.bib
 
-# Repository
+# Repository (for reference only, not displayed to users)
 repository:
   url: https://github.com/RAG-UIUC/Intelligent-Textbook
   branch: main
-  path_regex: "^.*\\.ipynb$"
