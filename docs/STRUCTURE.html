@@ -1,0 +1,912 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>📁 File Structure Organization Guide &#8212; Agentic Engineering Textbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "RAG-UIUC/Intelligent-Textbook");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/STRUCTURE';</script>
+    <link rel="canonical" href="https://rag-uiuc.github.io/Intelligent-Textbook/docs/STRUCTURE.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Agentic Engineering Textbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Agentic Engineering Textbook
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapters/01-what-are-agents/index.html">Chapter 1 - What Are AI Agents?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapters/01-what-are-agents/notebook.html">Interactive Notebook: Deep Dive</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/RAG-UIUC/Intelligent-Textbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/RAG-UIUC/Intelligent-Textbook/issues/new?title=Issue%20on%20page%20%2Fdocs/STRUCTURE.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/STRUCTURE.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>📁 File Structure Organization Guide</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-folders-explained">🎯 Key Folders Explained</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chapters-where-all-content-lives"><code class="docutils literal notranslate"><span class="pre">chapters/</span></code> - Where All Content Lives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docs-documentation"><code class="docutils literal notranslate"><span class="pre">docs/</span></code> - Documentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assets-images-resources"><code class="docutils literal notranslate"><span class="pre">assets/</span></code> - Images &amp; Resources</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-a-new-chapter">📝 How to Add a New Chapter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-create-folder">Step 1: Create Folder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-create-files">Step 2: Create Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-write-overview-index-md">Step 3: Write Overview (index.md)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-create-notebook">Step 4: Create Notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-update-table-of-contents">Step 5: Update Table of Contents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-commit-push">Step 6: Commit &amp; Push</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-organization-rules">🔄 File Organization Rules</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#root-directory">Root Directory (<code class="docutils literal notranslate"><span class="pre">/</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chapters-directory"><code class="docutils literal notranslate"><span class="pre">chapters/</span></code> Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docs-directory"><code class="docutils literal notranslate"><span class="pre">docs/</span></code> Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assets-directory-optional"><code class="docutils literal notranslate"><span class="pre">assets/</span></code> Directory (Optional)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents-structure">📊 Table of Contents Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organization-checklist">✅ Organization Checklist</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-this-structure">🚀 Benefits of This Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#links-in-your-content">🔗 Links in Your Content</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-overview-index-md">In Overview (index.md)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-notebook">In Notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#between-chapters">Between Chapters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-location">📚 Documentation Location</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-re-all-set">🎉 You’re All Set!</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="file-structure-organization-guide">
+<h1>📁 File Structure Organization Guide<a class="headerlink" href="#file-structure-organization-guide" title="Permalink to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<p>Your textbook is now organized with a clean, scalable folder structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Intelligent-Textbook/
+├── 📂 chapters/                      # All chapter content
+│   └── 📂 01-what-are-agents/        # Chapter 1
+│       ├── 📄 index.md               # Overview &amp; concepts
+│       └── 📓 notebook.ipynb         # Interactive notebook
+│
+├── 📂 docs/                          # Documentation
+│   ├── 📄 README.md                  # Full project info
+│   ├── 📄 CONTRIBUTING.md            # Contribution guidelines
+│   ├── 📄 DEPLOYMENT.md              # Deployment guide
+│   └── 📄 QUICKSTART.md              # Quick start guide
+│
+├── 📂 assets/                        # Images &amp; resources
+│   └── (future: logos, diagrams)
+│
+├── 📂 .github/workflows/             # GitHub automation
+│   └── deploy.yml                    # Auto-deployment
+│
+├── 📄 README.md                      # Root project README
+├── 📄 intro.md                       # Landing page content
+├── 📄 _config.yml                    # Jupyter Book config
+├── 📄 _toc.yml                       # Table of contents
+├── 📄 requirements.txt               # Python dependencies
+├── 📄 LICENSE                        # MIT license
+└── 📄 copilot-instructions.md        # Agent guidelines
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="key-folders-explained">
+<h2>🎯 Key Folders Explained<a class="headerlink" href="#key-folders-explained" title="Permalink to this heading">#</a></h2>
+<section id="chapters-where-all-content-lives">
+<h3><code class="docutils literal notranslate"><span class="pre">chapters/</span></code> - Where All Content Lives<a class="headerlink" href="#chapters-where-all-content-lives" title="Permalink to this heading">#</a></h3>
+<p>Each chapter gets its own folder with a consistent structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>chapters/
+├── 01-what-are-agents/
+│   ├── index.md           ← Overview page (concepts, links, samples)
+│   └── notebook.ipynb     ← Deep dive (code, widgets, challenges)
+│
+├── 02-agent-planning/     ← (Add next chapter here)
+│   ├── index.md
+│   └── notebook.ipynb
+│
+├── 03-tool-integration/   ← (And here...)
+│   ├── index.md
+│   └── notebook.ipynb
+</pre></div>
+</div>
+<p><strong>Why this structure?</strong></p>
+<ul class="simple">
+<li><p>✅ Scales easily as you add chapters</p></li>
+<li><p>✅ Keeps each chapter self-contained</p></li>
+<li><p>✅ Easy to find and manage files</p></li>
+<li><p>✅ Clear separation: overview vs deep dive</p></li>
+</ul>
+</section>
+<section id="docs-documentation">
+<h3><code class="docutils literal notranslate"><span class="pre">docs/</span></code> - Documentation<a class="headerlink" href="#docs-documentation" title="Permalink to this heading">#</a></h3>
+<p>All guides and project documentation in one place:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docs/
+├── README.md              ← Full project documentation
+├── CONTRIBUTING.md        ← How to add chapters
+├── DEPLOYMENT.md          ← Deployment details
+├── QUICKSTART.md          ← 5-minute setup
+└── (Add more guides as needed)
+</pre></div>
+</div>
+</section>
+<section id="assets-images-resources">
+<h3><code class="docutils literal notranslate"><span class="pre">assets/</span></code> - Images &amp; Resources<a class="headerlink" href="#assets-images-resources" title="Permalink to this heading">#</a></h3>
+<p>Reserved for logos, diagrams, and media:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>assets/
+├── images/
+│   ├── rag-logo.png
+│   └── agent-diagram.png
+├── icons/
+│   └── (chapter icons)
+└── (other resources)
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="how-to-add-a-new-chapter">
+<h2>📝 How to Add a New Chapter<a class="headerlink" href="#how-to-add-a-new-chapter" title="Permalink to this heading">#</a></h2>
+<section id="step-1-create-folder">
+<h3>Step 1: Create Folder<a class="headerlink" href="#step-1-create-folder" title="Permalink to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>chapters/02-agent-planning
+</pre></div>
+</div>
+</section>
+<section id="step-2-create-files">
+<h3>Step 2: Create Files<a class="headerlink" href="#step-2-create-files" title="Permalink to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Overview page</span>
+touch<span class="w"> </span>chapters/02-agent-planning/index.md
+
+<span class="c1"># Interactive notebook</span>
+touch<span class="w"> </span>chapters/02-agent-planning/notebook.ipynb
+</pre></div>
+</div>
+</section>
+<section id="step-3-write-overview-index-md">
+<h3>Step 3: Write Overview (<a class="reference external" href="http://index.md">index.md</a>)<a class="headerlink" href="#step-3-write-overview-index-md" title="Permalink to this heading">#</a></h3>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Chapter 2: Agent Planning</span>
+
+<span class="gu">## Overview</span>
+[Explain the chapter topic]
+
+<span class="gu">## 🎯 Core Concepts</span>
+[List 3-5 key concepts with explanations]
+
+<span class="gu">## 💡 Sample Code</span>
+[Show a simple code example]
+
+<span class="gu">## 🔗 Deep Dive</span>
+[<span class="nt">Open the interactive notebook →</span>](<span class="na">notebook.ipynb</span>)
+
+<span class="gu">## 📚 Resources</span>
+[Links to additional learning]
+</pre></div>
+</div>
+</section>
+<section id="step-4-create-notebook">
+<h3>Step 4: Create Notebook<a class="headerlink" href="#step-4-create-notebook" title="Permalink to this heading">#</a></h3>
+<p>Copy template or existing notebook to <code class="docutils literal notranslate"><span class="pre">notebook.ipynb</span></code></p>
+</section>
+<section id="step-5-update-table-of-contents">
+<h3>Step 5: Update Table of Contents<a class="headerlink" href="#step-5-update-table-of-contents" title="Permalink to this heading">#</a></h3>
+<p>Edit <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chapters/02-agent-planning/index.md</span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Chapter 2 - Agent Planning</span>
+<span class="w">  </span><span class="nt">sections</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chapters/02-agent-planning/notebook.ipynb</span>
+<span class="w">      </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Interactive</span><span class="nv"> </span><span class="s">Notebook:</span><span class="nv"> </span><span class="s">Deep</span><span class="nv"> </span><span class="s">Dive&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="step-6-commit-push">
+<h3>Step 6: Commit &amp; Push<a class="headerlink" href="#step-6-commit-push" title="Permalink to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>chapters/<span class="w"> </span>_toc.yml
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add Chapter 2: Agent Planning&quot;</span>
+git<span class="w"> </span>push
+</pre></div>
+</div>
+<p><strong>That’s it!</strong> GitHub Actions rebuilds automatically. ✨</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="file-organization-rules">
+<h2>🔄 File Organization Rules<a class="headerlink" href="#file-organization-rules" title="Permalink to this heading">#</a></h2>
+<section id="root-directory">
+<h3>Root Directory (<code class="docutils literal notranslate"><span class="pre">/</span></code>)<a class="headerlink" href="#root-directory" title="Permalink to this heading">#</a></h3>
+<p>Only essential files:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> - Jupyter Book config</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> - Table of contents</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">intro.md</span></code> - Landing page</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> - Dependencies</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">README.md</span></code> - Project overview</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> - License file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>, <code class="docutils literal notranslate"><span class="pre">.github/</span></code> - Git config</p></li>
+</ul>
+</section>
+<section id="chapters-directory">
+<h3><code class="docutils literal notranslate"><span class="pre">chapters/</span></code> Directory<a class="headerlink" href="#chapters-directory" title="Permalink to this heading">#</a></h3>
+<p>All content goes here:</p>
+<ul class="simple">
+<li><p>One folder per chapter</p></li>
+<li><p>Folder names: <code class="docutils literal notranslate"><span class="pre">01-name</span></code>, <code class="docutils literal notranslate"><span class="pre">02-name</span></code>, <code class="docutils literal notranslate"><span class="pre">03-name</span></code></p></li>
+<li><p>Each folder has: <code class="docutils literal notranslate"><span class="pre">index.md</span></code> (overview) + <code class="docutils literal notranslate"><span class="pre">notebook.ipynb</span></code> (notebook)</p></li>
+</ul>
+</section>
+<section id="docs-directory">
+<h3><code class="docutils literal notranslate"><span class="pre">docs/</span></code> Directory<a class="headerlink" href="#docs-directory" title="Permalink to this heading">#</a></h3>
+<p>All documentation:</p>
+<ul class="simple">
+<li><p>Contributing guides</p></li>
+<li><p>Deployment guides</p></li>
+<li><p>Setup guides</p></li>
+<li><p>Any reference materials</p></li>
+</ul>
+</section>
+<section id="assets-directory-optional">
+<h3><code class="docutils literal notranslate"><span class="pre">assets/</span></code> Directory (Optional)<a class="headerlink" href="#assets-directory-optional" title="Permalink to this heading">#</a></h3>
+<p>Images, logos, and resources:</p>
+<ul class="simple">
+<li><p>Images for documentation</p></li>
+<li><p>Chapter illustrations</p></li>
+<li><p>Project assets</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="table-of-contents-structure">
+<h2>📊 Table of Contents Structure<a class="headerlink" href="#table-of-contents-structure" title="Permalink to this heading">#</a></h2>
+<p>Your <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> should look like:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jb-book</span>
+<span class="nt">root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">intro</span>
+
+<span class="nt">chapters</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chapters/01-what-are-agents/index.md</span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Chapter 1 - What Are AI Agents?</span>
+<span class="w">  </span><span class="nt">sections</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chapters/01-what-are-agents/notebook.ipynb</span>
+<span class="w">      </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Interactive</span><span class="nv"> </span><span class="s">Notebook:</span><span class="nv"> </span><span class="s">Deep</span><span class="nv"> </span><span class="s">Dive&quot;</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chapters/02-agent-planning/index.md</span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Chapter 2 - Agent Planning</span>
+<span class="w">  </span><span class="nt">sections</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chapters/02-agent-planning/notebook.ipynb</span>
+<span class="w">      </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Interactive</span><span class="nv"> </span><span class="s">Notebook:</span><span class="nv"> </span><span class="s">Deep</span><span class="nv"> </span><span class="s">Dive&quot;</span>
+
+<span class="c1"># Add more chapters here...</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="organization-checklist">
+<h2>✅ Organization Checklist<a class="headerlink" href="#organization-checklist" title="Permalink to this heading">#</a></h2>
+<p>When adding content, verify:</p>
+<ul class="simple">
+<li><p>[ ] Chapter folder created: <code class="docutils literal notranslate"><span class="pre">chapters/NN-name/</span></code></p></li>
+<li><p>[ ] Overview file exists: <code class="docutils literal notranslate"><span class="pre">chapters/NN-name/index.md</span></code></p></li>
+<li><p>[ ] Notebook exists: <code class="docutils literal notranslate"><span class="pre">chapters/NN-name/notebook.ipynb</span></code></p></li>
+<li><p>[ ] Overview has correct links to notebook</p></li>
+<li><p>[ ] Notebook has proper structure</p></li>
+<li><p>[ ] <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> updated with new chapter</p></li>
+<li><p>[ ] All links are relative paths</p></li>
+<li><p>[ ] No broken references</p></li>
+<li><p>[ ] Committed to git</p></li>
+<li><p>[ ] Pushed to GitHub</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="benefits-of-this-structure">
+<h2>🚀 Benefits of This Structure<a class="headerlink" href="#benefits-of-this-structure" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Scalability</strong></p>
+<ul class="simple">
+<li><p>Easy to add 10, 20, or 100 chapters</p></li>
+<li><p>No root directory clutter</p></li>
+<li><p>Clear naming convention</p></li>
+</ul>
+</li>
+<li><p><strong>Maintainability</strong></p>
+<ul class="simple">
+<li><p>Find files quickly</p></li>
+<li><p>Understand structure at a glance</p></li>
+<li><p>Easy to move/delete chapters</p></li>
+</ul>
+</li>
+<li><p><strong>Collaboration</strong></p>
+<ul class="simple">
+<li><p>Contributors know where to add content</p></li>
+<li><p>Clear conventions to follow</p></li>
+<li><p>Easy to review changes</p></li>
+</ul>
+</li>
+<li><p><strong>Navigation</strong></p>
+<ul class="simple">
+<li><p>Users see logical chapter organization</p></li>
+<li><p>Overview → Deep dive progression</p></li>
+<li><p>Easy to discover related content</p></li>
+</ul>
+</li>
+<li><p><strong>Flexibility</strong></p>
+<ul class="simple">
+<li><p>Can add resources per chapter</p></li>
+<li><p>Space for images, datasets, code files</p></li>
+<li><p>Room to grow</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="links-in-your-content">
+<h2>🔗 Links in Your Content<a class="headerlink" href="#links-in-your-content" title="Permalink to this heading">#</a></h2>
+<section id="in-overview-index-md">
+<h3>In Overview (<a class="reference external" href="http://index.md">index.md</a>)<a class="headerlink" href="#in-overview-index-md" title="Permalink to this heading">#</a></h3>
+<p>Link to notebook in same folder:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>[<span class="nt">Open the notebook →</span>](<span class="na">notebook.ipynb</span>)
+</pre></div>
+</div>
+</section>
+<section id="in-notebook">
+<h3>In Notebook<a class="headerlink" href="#in-notebook" title="Permalink to this heading">#</a></h3>
+<p>Link to overview in same folder:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>[<span class="nt">Back to overview</span>](<span class="na">index.md</span>)
+</pre></div>
+</div>
+</section>
+<section id="between-chapters">
+<h3>Between Chapters<a class="headerlink" href="#between-chapters" title="Permalink to this heading">#</a></h3>
+<p>Link to other chapters:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>[<span class="nt">Chapter 2 →</span>](<span class="na">../02-agent-planning/index.md</span>)
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="documentation-location">
+<h2>📚 Documentation Location<a class="headerlink" href="#documentation-location" title="Permalink to this heading">#</a></h2>
+<p><strong>For users:</strong> See <code class="docutils literal notranslate"><span class="pre">docs/README.md</span></code> for full documentation</p>
+<p><strong>For contributors:</strong> See <code class="docutils literal notranslate"><span class="pre">docs/CONTRIBUTING.md</span></code> for guidelines</p>
+<p><strong>For deployment:</strong> See <code class="docutils literal notranslate"><span class="pre">docs/DEPLOYMENT.md</span></code> for hosting info</p>
+<p><strong>For quick setup:</strong> See <code class="docutils literal notranslate"><span class="pre">docs/QUICKSTART.md</span></code> for fast start</p>
+</section>
+<hr class="docutils" />
+<section id="you-re-all-set">
+<h2>🎉 You’re All Set!<a class="headerlink" href="#you-re-all-set" title="Permalink to this heading">#</a></h2>
+<p>Your textbook now has a professional, scalable structure.</p>
+<p>Ready to add more chapters? Just follow the pattern:</p>
+<ol class="arabic simple">
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">chapters/NN-name/</span></code> folder</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">index.md</span></code> and <code class="docutils literal notranslate"><span class="pre">notebook.ipynb</span></code></p></li>
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code></p></li>
+<li><p>Push to GitHub</p></li>
+</ol>
+<p>The rest is automatic! ✨</p>
+<p>Happy building! 🚀</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-folders-explained">🎯 Key Folders Explained</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chapters-where-all-content-lives"><code class="docutils literal notranslate"><span class="pre">chapters/</span></code> - Where All Content Lives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docs-documentation"><code class="docutils literal notranslate"><span class="pre">docs/</span></code> - Documentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assets-images-resources"><code class="docutils literal notranslate"><span class="pre">assets/</span></code> - Images &amp; Resources</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-a-new-chapter">📝 How to Add a New Chapter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-create-folder">Step 1: Create Folder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-create-files">Step 2: Create Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-write-overview-index-md">Step 3: Write Overview (index.md)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-create-notebook">Step 4: Create Notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-update-table-of-contents">Step 5: Update Table of Contents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-commit-push">Step 6: Commit &amp; Push</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-organization-rules">🔄 File Organization Rules</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#root-directory">Root Directory (<code class="docutils literal notranslate"><span class="pre">/</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chapters-directory"><code class="docutils literal notranslate"><span class="pre">chapters/</span></code> Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docs-directory"><code class="docutils literal notranslate"><span class="pre">docs/</span></code> Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assets-directory-optional"><code class="docutils literal notranslate"><span class="pre">assets/</span></code> Directory (Optional)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents-structure">📊 Table of Contents Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organization-checklist">✅ Organization Checklist</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-this-structure">🚀 Benefits of This Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#links-in-your-content">🔗 Links in Your Content</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-overview-index-md">In Overview (index.md)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-notebook">In Notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#between-chapters">Between Chapters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-location">📚 Documentation Location</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-re-all-set">🎉 You’re All Set!</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By RAGUIUC Agentic AI Club
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
