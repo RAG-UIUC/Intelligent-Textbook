@@ -3,10 +3,10 @@
 format: jb-book
 root: intro
 chapters:
-- file: Chapter_1_Overview.md
+- file: chapters/01-what-are-agents/index.md
   title: Chapter 1 - What Are AI Agents?
   sections:
-    - file: Chapter_1_What_Are_AI_Agents.ipynb
+    - file: chapters/01-what-are-agents/notebook.ipynb
       title: "Interactive Notebook: Deep Dive"
 
 # Uncomment and add more chapters as you create them:

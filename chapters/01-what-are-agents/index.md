@@ -19,7 +19,7 @@ An **AI agent** is an autonomous entity that perceives its environment, makes de
 - **Action**: Modifies the environment through actuators or outputs
 - **Adaptation**: Learns and improves from experience
 
-👉 **Explore in depth**: [Open the full notebook →](Chapter_1_What_Are_AI_Agents.ipynb)
+👉 **Explore in depth**: [Open the full notebook →](notebook.ipynb)
 
 ---
 
@@ -139,7 +139,7 @@ This simple agent demonstrates:
 - ✅ Action (turning systems on/off)
 - ✅ Autonomy (no human intervention needed)
 
-**See the full implementation and interactive examples**: [Open the notebook →](Chapter_1_What_Are_AI_Agents.ipynb)
+**See the full implementation and interactive examples**: [Open the notebook →](notebook.ipynb)
 
 ---
 
@@ -158,10 +158,10 @@ This chapter covers:
 
 ## 🔗 Quick Links
 
-- 📖 **[Full Interactive Notebook](Chapter_1_What_Are_AI_Agents.ipynb)** - Run code, modify parameters, see live results
-- 🚀 **[Try Interactive Widgets](Chapter_1_What_Are_AI_Agents.ipynb#interactive-widgets)** - Experiment with agent behavior
-- 💻 **[Source Code](Chapter_1_What_Are_AI_Agents.ipynb#code-examples)** - See complete implementation
-- 🎯 **[Challenge Exercises](Chapter_1_What_Are_AI_Agents.ipynb#challenges)** - Test your understanding
+- 📖 **[Full Interactive Notebook](notebook.ipynb)** - Run code, modify parameters, see live results
+- 🚀 **[Try Interactive Widgets](notebook.ipynb#interactive-widgets)** - Experiment with agent behavior
+- 💻 **[Source Code](notebook.ipynb#code-examples)** - See complete implementation
+- 🎯 **[Challenge Exercises](notebook.ipynb#challenges)** - Test your understanding
 
 ---
 
@@ -218,7 +218,7 @@ A: Through probability, fuzzy logic, or robust decision-making strategies.
 
 ## 🚀 Ready to Dive Deep?
 
-[Open the Interactive Notebook →](Chapter_1_What_Are_AI_Agents.ipynb)
+[Open the Interactive Notebook →](notebook.ipynb)
 
 The notebook includes:
 - ✨ Interactive visualizations
