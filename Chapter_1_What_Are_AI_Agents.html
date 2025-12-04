@@ -1,0 +1,1559 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Chapter 1: What Are AI Agents? &#8212; Agentic Engineering Textbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "RAGUIUC/agentic-ai-textbook");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"bb524ae09b164718b8fc49aa4073d164": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "086b7830c0994ee691739b30784068ec": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": ""}}, "c9a8d048577d4a3b8c9424dc00b1e65f": {"model_name": "RadioButtonsModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "RadioButtonsModel", "_options_labels": ["Reactive", "Deliberative", "Hybrid"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "RadioButtonsView", "description": "Choose Agent Type:", "description_allow_html": false, "disabled": false, "index": 0, "layout": "IPY_MODEL_bb524ae09b164718b8fc49aa4073d164", "orientation": "vertical", "style": "IPY_MODEL_086b7830c0994ee691739b30784068ec", "tabbable": null, "tooltip": null}}, "a3bc7c5c36dd45c7969d08e373a32d19": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "11306ed1cd97408ca8fd850d8ca56508": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_c9a8d048577d4a3b8c9424dc00b1e65f", "IPY_MODEL_56749f337a6446e7a268593836c81391"], "layout": "IPY_MODEL_a3bc7c5c36dd45c7969d08e373a32d19", "tabbable": null, "tooltip": null}}, "6cc5681c7836452f9292469c32297304": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "56749f337a6446e7a268593836c81391": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_6cc5681c7836452f9292469c32297304", "msg_id": "", "outputs": [{"output_type": "stream", "name": "stdout", "text": "\n============================================================\n\ud83e\udd16 REACTIVE AGENT\n============================================================\nDescription: Direct stimulus-response\nSpeed: \u26a1 Very Fast\nMemory: None\nPlanning Capability: None\nReal-world Example: Ant colony behavior, simple robots\n\nCode Pattern:\n```python\nif temperature > 25:\n    turn_ac_on()\n```\n============================================================\n\n"}], "tabbable": null, "tooltip": null}}, "be81dd8d3b9d4efab138ae867ed446eb": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0a8ecbcf55324e3c95400521076f839c": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_be81dd8d3b9d4efab138ae867ed446eb", "msg_id": "", "outputs": [{"output_type": "error", "ename": "AttributeError", "evalue": "'Output' object has no attribute 'clear'", "traceback": ["\u001b[31m---------------------------------------------------------------------------\u001b[39m", "\u001b[31mAttributeError\u001b[39m                            Traceback (most recent call last)", "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 26\u001b[39m, in \u001b[36mvisualize_architecture\u001b[39m\u001b[34m(show_sensors, show_memory, show_decision, show_actuators)\u001b[39m\n\u001b[32m     24\u001b[39m \u001b[38;5;28;01mdef\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[34mvisualize_architecture\u001b[39m(show_sensors, show_memory, show_decision, show_actuators):\n\u001b[32m     25\u001b[39m     \u001b[38;5;28;01mwith\u001b[39;00m output:\n\u001b[32m---> \u001b[39m\u001b[32m26\u001b[39m         \u001b[43moutput\u001b[49m\u001b[43m.\u001b[49m\u001b[43mclear\u001b[49m()\n\u001b[32m     28\u001b[39m         enabled = {\n\u001b[32m     29\u001b[39m             \u001b[33m\"\u001b[39m\u001b[33msensors\u001b[39m\u001b[33m\"\u001b[39m: show_sensors,\n\u001b[32m     30\u001b[39m             \u001b[33m\"\u001b[39m\u001b[33mmemory\u001b[39m\u001b[33m\"\u001b[39m: show_memory,\n\u001b[32m     31\u001b[39m             \u001b[33m\"\u001b[39m\u001b[33mdecision\u001b[39m\u001b[33m\"\u001b[39m: show_decision,\n\u001b[32m     32\u001b[39m             \u001b[33m\"\u001b[39m\u001b[33mactuators\u001b[39m\u001b[33m\"\u001b[39m: show_actuators\n\u001b[32m     33\u001b[39m         }\n\u001b[32m     35\u001b[39m         \u001b[38;5;28mprint\u001b[39m(\u001b[33m\"\u001b[39m\u001b[38;5;130;01m\\n\u001b[39;00m\u001b[33m\"\u001b[39m + \u001b[33m\"\u001b[39m\u001b[33m=\u001b[39m\u001b[33m\"\u001b[39m*\u001b[32m60\u001b[39m)\n", "\u001b[31mAttributeError\u001b[39m: 'Output' object has no attribute 'clear'"]}, {"output_type": "error", "ename": "AttributeError", "evalue": "'Output' object has no attribute 'clear'", "traceback": ["\u001b[31m---------------------------------------------------------------------------\u001b[39m", "\u001b[31mAttributeError\u001b[39m                            Traceback (most recent call last)", "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 26\u001b[39m, in \u001b[36mvisualize_architecture\u001b[39m\u001b[34m(show_sensors, show_memory, show_decision, show_actuators)\u001b[39m\n\u001b[32m     24\u001b[39m \u001b[38;5;28;01mdef\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[34mvisualize_architecture\u001b[39m(show_sensors, show_memory, show_decision, show_actuators):\n\u001b[32m     25\u001b[39m     \u001b[38;5;28;01mwith\u001b[39;00m output:\n\u001b[32m---> \u001b[39m\u001b[32m26\u001b[39m         \u001b[43moutput\u001b[49m\u001b[43m.\u001b[49m\u001b[43mclear\u001b[49m()\n\u001b[32m     28\u001b[39m         enabled = {\n\u001b[32m     29\u001b[39m             \u001b[33m\"\u001b[39m\u001b[33msensors\u001b[39m\u001b[33m\"\u001b[39m: show_sensors,\n\u001b[32m     30\u001b[39m             \u001b[33m\"\u001b[39m\u001b[33mmemory\u001b[39m\u001b[33m\"\u001b[39m: show_memory,\n\u001b[32m     31\u001b[39m             \u001b[33m\"\u001b[39m\u001b[33mdecision\u001b[39m\u001b[33m\"\u001b[39m: show_decision,\n\u001b[32m     32\u001b[39m             \u001b[33m\"\u001b[39m\u001b[33mactuators\u001b[39m\u001b[33m\"\u001b[39m: show_actuators\n\u001b[32m     33\u001b[39m         }\n\u001b[32m     35\u001b[39m         \u001b[38;5;28mprint\u001b[39m(\u001b[33m\"\u001b[39m\u001b[38;5;130;01m\\n\u001b[39;00m\u001b[33m\"\u001b[39m + \u001b[33m\"\u001b[39m\u001b[33m=\u001b[39m\u001b[33m\"\u001b[39m*\u001b[32m60\u001b[39m)\n", "\u001b[31mAttributeError\u001b[39m: 'Output' object has no attribute 'clear'"]}], "tabbable": null, "tooltip": null}}, "c61111ca915640dba45afe8ea48cb619": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "21ac3a22b3ad4bd189061d22f7762743": {"model_name": "CheckboxStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "CheckboxStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": ""}}, "39634578fedd4ce398c2345359c36124": {"model_name": "CheckboxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "CheckboxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "CheckboxView", "description": "Sensors", "description_allow_html": false, "disabled": false, "indent": true, "layout": "IPY_MODEL_c61111ca915640dba45afe8ea48cb619", "style": "IPY_MODEL_21ac3a22b3ad4bd189061d22f7762743", "tabbable": null, "tooltip": null, "value": true}}, "3eff9a4ec9ee4f94a314bdf462beb35f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f0aa474c08144fca9f16d4984541b6e9": {"model_name": "CheckboxStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "CheckboxStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": ""}}, "6f8fd4803a004b16aca987c49a4c6486": {"model_name": "CheckboxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "CheckboxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "CheckboxView", "description": "Memory", "description_allow_html": false, "disabled": false, "indent": true, "layout": "IPY_MODEL_3eff9a4ec9ee4f94a314bdf462beb35f", "style": "IPY_MODEL_f0aa474c08144fca9f16d4984541b6e9", "tabbable": null, "tooltip": null, "value": true}}, "6f5aaadebdda4f9083f2e81bdf47b7b6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3002f9a0928f46f4ad9dc282760af35b": {"model_name": "CheckboxStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "CheckboxStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": ""}}, "663ac924122e4e79961a8b8bdf2abb10": {"model_name": "CheckboxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "CheckboxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "CheckboxView", "description": "Decision Engine", "description_allow_html": false, "disabled": false, "indent": true, "layout": "IPY_MODEL_6f5aaadebdda4f9083f2e81bdf47b7b6", "style": "IPY_MODEL_3002f9a0928f46f4ad9dc282760af35b", "tabbable": null, "tooltip": null, "value": true}}, "c217c9a270f14595bed3911c57f52528": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5d242fa9451843e4a09012f37d925279": {"model_name": "CheckboxStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "CheckboxStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": ""}}, "65c94a9da009430eaefe1f4b586b5e0e": {"model_name": "CheckboxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "CheckboxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "CheckboxView", "description": "Actuators", "description_allow_html": false, "disabled": false, "indent": true, "layout": "IPY_MODEL_c217c9a270f14595bed3911c57f52528", "style": "IPY_MODEL_5d242fa9451843e4a09012f37d925279", "tabbable": null, "tooltip": null, "value": true}}, "2919b2bb9ea24239827a4c267c51073f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ac8e6fb978584a68a94ebb527bae6cd3": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_39634578fedd4ce398c2345359c36124", "IPY_MODEL_6f8fd4803a004b16aca987c49a4c6486", "IPY_MODEL_663ac924122e4e79961a8b8bdf2abb10", "IPY_MODEL_65c94a9da009430eaefe1f4b586b5e0e"], "layout": "IPY_MODEL_2919b2bb9ea24239827a4c267c51073f", "tabbable": null, "tooltip": null}}, "5c8910c138854f3dbf348ab96f9adbb6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ac67244989404234a14d472d2972945d": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_39634578fedd4ce398c2345359c36124", "IPY_MODEL_6f8fd4803a004b16aca987c49a4c6486", "IPY_MODEL_663ac924122e4e79961a8b8bdf2abb10", "IPY_MODEL_65c94a9da009430eaefe1f4b586b5e0e", "IPY_MODEL_c5b2af22fb6b4c6da4c7edae66ce391e"], "layout": "IPY_MODEL_5c8910c138854f3dbf348ab96f9adbb6", "tabbable": null, "tooltip": null}}, "a0e0d443aaef4d0faa1b7da59afc8da3": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c5b2af22fb6b4c6da4c7edae66ce391e": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_a0e0d443aaef4d0faa1b7da59afc8da3", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}, "14cfe056f6f3487aa9d8249091b68c9d": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d187eee6c26044ef8a2fe54e6db81307": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "0a7c662f7897472eb20ef0f0c4a749da": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_14cfe056f6f3487aa9d8249091b68c9d", "placeholder": "\u200b", "style": "IPY_MODEL_d187eee6c26044ef8a2fe54e6db81307", "tabbable": null, "tooltip": null, "value": "<b>Toggle components to see architecture:</b>"}}, "a88801ccd1164926a669863bb347b3f6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c4efc71ca325492bab8f6dd3d21fcf20": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_0a7c662f7897472eb20ef0f0c4a749da", "IPY_MODEL_ac8e6fb978584a68a94ebb527bae6cd3", "IPY_MODEL_0a8ecbcf55324e3c95400521076f839c"], "layout": "IPY_MODEL_a88801ccd1164926a669863bb347b3f6", "tabbable": null, "tooltip": null}}, "cd50ab97287d43c9af882980d77d8ac9": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c8fa2cb057514caba3f5e1603f535bca": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "a4c83ce2da7549f0b5b408851bbd65d8": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "FloatSliderView", "behavior": "drag-tap", "continuous_update": false, "description": "Min Temp (\u00b0C):", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_cd50ab97287d43c9af882980d77d8ac9", "max": 25.0, "min": 15.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.5, "style": "IPY_MODEL_c8fa2cb057514caba3f5e1603f535bca", "tabbable": null, "tooltip": null, "value": 20.0}}, "a3f3e8a62e604f019ffbb7d477ec6243": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "44f74a409f374a8fa028002729918baa": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "548e6269f95843c092fb08b77fd36c5e": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "FloatSliderView", "behavior": "drag-tap", "continuous_update": false, "description": "Max Temp (\u00b0C):", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_a3f3e8a62e604f019ffbb7d477ec6243", "max": 30.0, "min": 20.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.5, "style": "IPY_MODEL_44f74a409f374a8fa028002729918baa", "tabbable": null, "tooltip": null, "value": 25.0}}, "e4364d9aa2004084822a30efc7c58b35": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "611f3868ca1f44e3854a9add83c4b9be": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "d8f3369401a84e82a3fc204a19c48eef": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "FloatSliderView", "behavior": "drag-tap", "continuous_update": false, "description": "Current Temp (\u00b0C):", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_e4364d9aa2004084822a30efc7c58b35", "max": 35.0, "min": 15.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.5, "style": "IPY_MODEL_611f3868ca1f44e3854a9add83c4b9be", "tabbable": null, "tooltip": null, "value": 22.0}}, "2e9cb56efdfa458da1f5859b1daf41b7": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d70bbdfe1f7e4cf1ab9bdd7e9d2d4d8f": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_2e9cb56efdfa458da1f5859b1daf41b7", "msg_id": "", "outputs": [{"output_type": "error", "ename": "AttributeError", "evalue": "'Output' object has no attribute 'clear'", "traceback": ["\u001b[31m---------------------------------------------------------------------------\u001b[39m", "\u001b[31mAttributeError\u001b[39m                            Traceback (most recent call last)", "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[5]\u001b[39m\u001b[32m, line 39\u001b[39m, in \u001b[36mtest_thermostat\u001b[39m\u001b[34m(min_temp, max_temp, current_temp)\u001b[39m\n\u001b[32m     37\u001b[39m \u001b[38;5;28;01mdef\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[34mtest_thermostat\u001b[39m(min_temp, max_temp, current_temp):\n\u001b[32m     38\u001b[39m     \u001b[38;5;28;01mwith\u001b[39;00m output:\n\u001b[32m---> \u001b[39m\u001b[32m39\u001b[39m         \u001b[43moutput\u001b[49m\u001b[43m.\u001b[49m\u001b[43mclear\u001b[49m()\n\u001b[32m     41\u001b[39m         \u001b[38;5;66;03m# Validate inputs\u001b[39;00m\n\u001b[32m     42\u001b[39m         \u001b[38;5;28;01mif\u001b[39;00m min_temp >= max_temp:\n", "\u001b[31mAttributeError\u001b[39m: 'Output' object has no attribute 'clear'"]}], "tabbable": null, "tooltip": null}}, "81de54eafe3c48b684b05c58e237ce14": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e7bbbe94dbef447faaa8d163a0c9516a": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "c514dc0c4c0542ea855daf57ae0efe95": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "info", "description": "Test Agent", "disabled": false, "icon": "", "layout": "IPY_MODEL_81de54eafe3c48b684b05c58e237ce14", "style": "IPY_MODEL_e7bbbe94dbef447faaa8d163a0c9516a", "tabbable": null, "tooltip": null}}, "55744bfa7e904cf8baf37d1677bbdd4e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a2ae018c6e8346e7bf69dc74e43af431": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "ee4abdf09b88485996d6c9f052c83f02": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_55744bfa7e904cf8baf37d1677bbdd4e", "placeholder": "\u200b", "style": "IPY_MODEL_a2ae018c6e8346e7bf69dc74e43af431", "tabbable": null, "tooltip": null, "value": "<b style='font-size: 14px;'>\u2699\ufe0f Configure Your Thermostat Agent</b>"}}, "d7776eba9d1c4052bf569200f55deb60": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6a16975818934a52bb60efd3ea43d3be": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_ee4abdf09b88485996d6c9f052c83f02", "IPY_MODEL_a4c83ce2da7549f0b5b408851bbd65d8", "IPY_MODEL_548e6269f95843c092fb08b77fd36c5e", "IPY_MODEL_d8f3369401a84e82a3fc204a19c48eef", "IPY_MODEL_c514dc0c4c0542ea855daf57ae0efe95", "IPY_MODEL_d70bbdfe1f7e4cf1ab9bdd7e9d2d4d8f"], "layout": "IPY_MODEL_d7776eba9d1c4052bf569200f55deb60", "tabbable": null, "tooltip": null}}, "fbf0351c4c2e4a9288f5423ab28b57d0": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "aa8ad29e4ed9414599e9ab3f2717c9d0": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "8790ecb831d145ba8aa12d87d7a018a1": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "IntSliderView", "behavior": "drag-tap", "continuous_update": false, "description": "Simulation Steps:", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_fbf0351c4c2e4a9288f5423ab28b57d0", "max": 200, "min": 10, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 10, "style": "IPY_MODEL_aa8ad29e4ed9414599e9ab3f2717c9d0", "tabbable": null, "tooltip": null, "value": 50}}, "9d4feba8f6ee46f486159720f70aea75": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "bfa482ef69f145d38998b373ef3481fd": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": ""}}, "dba328eaca9d4435bd08785a94e1261d": {"model_name": "DropdownModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DropdownModel", "_options_labels": ["stable", "warming", "cooling", "chaotic", "morning"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "DropdownView", "description": "Environment:", "description_allow_html": false, "disabled": false, "index": 0, "layout": "IPY_MODEL_9d4feba8f6ee46f486159720f70aea75", "style": "IPY_MODEL_bfa482ef69f145d38998b373ef3481fd", "tabbable": null, "tooltip": null}}, "88889586cb9b40ff96a33830006a80b2": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d956bcfb748d45ecab88d265506fa276": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_88889586cb9b40ff96a33830006a80b2", "msg_id": "", "outputs": [{"output_type": "error", "ename": "AttributeError", "evalue": "'Output' object has no attribute 'clear'", "traceback": ["\u001b[31m---------------------------------------------------------------------------\u001b[39m", "\u001b[31mAttributeError\u001b[39m                            Traceback (most recent call last)", "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[6]\u001b[39m\u001b[32m, line 90\u001b[39m, in \u001b[36mrun_simulation\u001b[39m\u001b[34m(num_steps, pattern)\u001b[39m\n\u001b[32m     88\u001b[39m \u001b[38;5;28;01mdef\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[34mrun_simulation\u001b[39m(num_steps, pattern):\n\u001b[32m     89\u001b[39m     \u001b[38;5;28;01mwith\u001b[39;00m simulation_output:\n\u001b[32m---> \u001b[39m\u001b[32m90\u001b[39m         \u001b[43msimulation_output\u001b[49m\u001b[43m.\u001b[49m\u001b[43mclear\u001b[49m()\n\u001b[32m     92\u001b[39m         \u001b[38;5;66;03m# Run the simulation\u001b[39;00m\n\u001b[32m     93\u001b[39m         sim = EnvironmentSimulator(initial_temp=\u001b[32m22\u001b[39m, external_pattern=pattern)\n", "\u001b[31mAttributeError\u001b[39m: 'Output' object has no attribute 'clear'"]}], "tabbable": null, "tooltip": null}}, "db1b7ec34c7b4f5e8fe9df5bf9143fc5": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "510948f380bd474b97422ef74d758ac9": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "54bc7216664149459e061b4e721027ff": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "success", "description": "Run Simulation", "disabled": false, "icon": "", "layout": "IPY_MODEL_db1b7ec34c7b4f5e8fe9df5bf9143fc5", "style": "IPY_MODEL_510948f380bd474b97422ef74d758ac9", "tabbable": null, "tooltip": null}}, "ea9ed032b36d479980045a36d4d567ba": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "9598548784244590a65f7638b9b1b16c": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "cba7b2c619774d5d8e2fea05a770c323": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_ea9ed032b36d479980045a36d4d567ba", "placeholder": "\u200b", "style": "IPY_MODEL_9598548784244590a65f7638b9b1b16c", "tabbable": null, "tooltip": null, "value": "<b style='font-size: 14px;'>\ud83d\udd2c Agent Simulation Control Panel</b>"}}, "e337459c980f4eccbd4ad22b36cfe1c4": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "54ba17f1cc514333b4b97eac4b9b18a0": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_cba7b2c619774d5d8e2fea05a770c323", "IPY_MODEL_8790ecb831d145ba8aa12d87d7a018a1", "IPY_MODEL_dba328eaca9d4435bd08785a94e1261d", "IPY_MODEL_54bc7216664149459e061b4e721027ff", "IPY_MODEL_d956bcfb748d45ecab88d265506fa276"], "layout": "IPY_MODEL_e337459c980f4eccbd4ad22b36cfe1c4", "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter_1_What_Are_AI_Agents';</script>
+    <link rel="canonical" href="https://github.com/RAGUIUC/agentic-ai-textbook/Chapter_1_What_Are_AI_Agents.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Agentic Engineering Textbook" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Agentic Engineering Textbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Agentic Engineering Textbook
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 1 - What Are AI Agents?</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/RAGUIUC/agentic-ai-textbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/RAGUIUC/agentic-ai-textbook/issues/new?title=Issue%20on%20page%20%2FChapter_1_What_Are_AI_Agents.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Chapter_1_What_Are_AI_Agents.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 1: What Are AI Agents?</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#welcome-to-agentic-engineering">Welcome to Agentic Engineering! 🚀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-ai-agents">1. What Are AI Agents?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-agent-loop">The Agent Loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-makes-an-agent-different">What Makes an Agent Different?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-ai-agents">2. Types of AI Agents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reactive-agents">Reactive Agents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deliberative-agents">Deliberative Agents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-agents">Hybrid Agents</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agent-architecture-and-components">3. Agent Architecture and Components</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-four-essential-components">The Four Essential Components</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sensors-perception-module">1. <strong>Sensors</strong> (Perception Module)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-engine-brain">2. <strong>Decision Engine</strong> (Brain)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#actuators-action-module">3. <strong>Actuators</strong> (Action Module)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-knowledge-base">4. <strong>Memory</strong> (Knowledge Base)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-they-connect">How They Connect</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-simple-reactive-agent">4. Building a Simple Reactive Agent</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-agent-s-task">The Agent’s Task:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-agent-simulation">5. Interactive Agent Simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">🎓 Key Takeaways</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-we-learned">What We Learned:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#challenge-exercise">💡 Challenge Exercise</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-1-what-are-ai-agents">
+<h1>Chapter 1: What Are AI Agents?<a class="headerlink" href="#chapter-1-what-are-ai-agents" title="Permalink to this heading">#</a></h1>
+<section id="welcome-to-agentic-engineering">
+<h2>Welcome to Agentic Engineering! 🚀<a class="headerlink" href="#welcome-to-agentic-engineering" title="Permalink to this heading">#</a></h2>
+<p>In this chapter, we’ll explore the fundamental concepts of AI agents—autonomous systems that perceive their environment, make decisions, and take actions to achieve goals. By the end, you’ll understand how agents work and build your first interactive agent.</p>
+<blockquote>
+<div><p><strong>Key Question</strong>: What makes something an “agent” rather than just a program?</p>
+</div></blockquote>
+</section>
+<section id="what-are-ai-agents">
+<h2>1. What Are AI Agents?<a class="headerlink" href="#what-are-ai-agents" title="Permalink to this heading">#</a></h2>
+<section id="definition">
+<h3>Definition<a class="headerlink" href="#definition" title="Permalink to this heading">#</a></h3>
+<p>An <strong>AI agent</strong> is an autonomous entity that:</p>
+<ul class="simple">
+<li><p><strong>Perceives</strong> its environment through sensors</p></li>
+<li><p><strong>Reasons</strong> about what to do based on goals and knowledge</p></li>
+<li><p><strong>Acts</strong> to change its environment through actuators</p></li>
+<li><p><strong>Learns</strong> and adapts from experience</p></li>
+</ul>
+</section>
+<section id="the-agent-loop">
+<h3>The Agent Loop<a class="headerlink" href="#the-agent-loop" title="Permalink to this heading">#</a></h3>
+<p>Every agent follows a continuous cycle:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌─────────────────────────────────────────┐
+│        AGENT FEEDBACK LOOP              │
+├─────────────────────────────────────────┤
+│  1. PERCEIVE: Gather environmental data │
+│        ↓                                  │
+│  2. REASON: Process &amp; decide             │
+│        ↓                                  │
+│  3. ACT: Execute actions                 │
+│        ↓                                  │
+│  4. LEARN: Update knowledge              │
+│        ↓ (cycle repeats)                 │
+└─────────────────────────────────────────┘
+</pre></div>
+</div>
+</section>
+<section id="what-makes-an-agent-different">
+<h3>What Makes an Agent Different?<a class="headerlink" href="#what-makes-an-agent-different" title="Permalink to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Traditional Program</p></th>
+<th class="head"><p>AI Agent</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Input</strong></p></td>
+<td><p>Structured data</p></td>
+<td><p>Sensors (camera, text, data)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Processing</strong></p></td>
+<td><p>Fixed algorithms</p></td>
+<td><p>Adaptive reasoning</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Output</strong></p></td>
+<td><p>Predetermined responses</p></td>
+<td><p>Goal-oriented decisions</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Adaptation</strong></p></td>
+<td><p>Static</p></td>
+<td><p>Dynamic, learns from experience</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Autonomy</strong></p></td>
+<td><p>Requires explicit commands</p></td>
+<td><p>Self-directed toward goals</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Complexity</strong></p></td>
+<td><p>Handles specific tasks</p></td>
+<td><p>Handles open-ended problems</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Interactive: Agent Loop Visualization</span>
+<span class="c1"># Let&#39;s visualize the agent loop with an example</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">visualize_agent_loop</span><span class="p">(</span><span class="n">environment_state</span><span class="p">,</span> <span class="n">agent_name</span><span class="o">=</span><span class="s2">&quot;My Agent&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate the agent feedback loop step by step&quot;&quot;&quot;</span>
+    
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;phase&quot;</span><span class="p">:</span> <span class="s2">&quot;1️⃣ PERCEIVE&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Agent observes the environment&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;example&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Sensor input: </span><span class="si">{</span><span class="n">environment_state</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;phase&quot;</span><span class="p">:</span> <span class="s2">&quot;2️⃣ REASON&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Agent analyzes information and makes decisions&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;example&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Decision logic: If &#39;</span><span class="si">{</span><span class="n">environment_state</span><span class="si">}</span><span class="s2">&#39; then action = ?&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;phase&quot;</span><span class="p">:</span> <span class="s2">&quot;3️⃣ ACT&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Agent takes an action to affect the environment&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;example&quot;</span><span class="p">:</span> <span class="s2">&quot;Action taken: Adjust behavior based on analysis&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;phase&quot;</span><span class="p">:</span> <span class="s2">&quot;4️⃣ LEARN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Agent updates its knowledge from the outcome&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;example&quot;</span><span class="p">:</span> <span class="s2">&quot;Update: This action produced a certain result&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🤖 </span><span class="si">{</span><span class="n">agent_name</span><span class="si">}</span><span class="s2"> - Agent Loop Demonstration</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="n">steps</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">step</span><span class="p">[</span><span class="s1">&#39;phase&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;└─ </span><span class="si">{</span><span class="n">step</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Example: </span><span class="si">{</span><span class="n">step</span><span class="p">[</span><span class="s1">&#39;example&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">()</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Loop complete - agent is ready for next cycle!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Run the visualization</span>
+<span class="n">visualize_agent_loop</span><span class="p">(</span><span class="s2">&quot;obstacle detected&quot;</span><span class="p">,</span> <span class="s2">&quot;Robot Navigation Agent&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🤖 Robot Navigation Agent - Agent Loop Demonstration
+
+============================================================
+
+1️⃣ PERCEIVE
+└─ Agent observes the environment
+   Example: Sensor input: obstacle detected
+
+
+2️⃣ REASON
+└─ Agent analyzes information and makes decisions
+   Example: Decision logic: If &#39;obstacle detected&#39; then action = ?
+
+
+3️⃣ ACT
+└─ Agent takes an action to affect the environment
+   Example: Action taken: Adjust behavior based on analysis
+
+
+4️⃣ LEARN
+└─ Agent updates its knowledge from the outcome
+   Example: Update: This action produced a certain result
+
+============================================================
+✅ Loop complete - agent is ready for next cycle!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="types-of-ai-agents">
+<h2>2. Types of AI Agents<a class="headerlink" href="#types-of-ai-agents" title="Permalink to this heading">#</a></h2>
+<p>Agents come in different flavors based on their decision-making complexity:</p>
+<section id="reactive-agents">
+<h3>Reactive Agents<a class="headerlink" href="#reactive-agents" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>How they work</strong>: Directly map percepts to actions (stimulus → response)</p></li>
+<li><p><strong>Pros</strong>: Fast, simple, predictable</p></li>
+<li><p><strong>Cons</strong>: No memory, can’t handle complex scenarios</p></li>
+<li><p><strong>Example</strong>: Thermostat that turns heating on/off based on temperature</p></li>
+</ul>
+</section>
+<section id="deliberative-agents">
+<h3>Deliberative Agents<a class="headerlink" href="#deliberative-agents" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>How they work</strong>: Use reasoning with planning and world models</p></li>
+<li><p><strong>Pros</strong>: Handle complex goals, can plan ahead</p></li>
+<li><p><strong>Cons</strong>: Slower, computationally expensive</p></li>
+<li><p><strong>Example</strong>: Chess engine that thinks multiple moves ahead</p></li>
+</ul>
+</section>
+<section id="hybrid-agents">
+<h3>Hybrid Agents<a class="headerlink" href="#hybrid-agents" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>How they work</strong>: Combine reactive speed with deliberative reasoning</p></li>
+<li><p><strong>Pros</strong>: Fast responses + smart planning</p></li>
+<li><p><strong>Cons</strong>: More complex to implement</p></li>
+<li><p><strong>Example</strong>: Self-driving car (reacts to obstacles instantly, plans routes)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Interactive: Agent Type Explorer</span>
+<span class="c1"># Try different agent types and see their characteristics</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">RadioButtons</span><span class="p">,</span> <span class="n">IntSlider</span><span class="p">,</span> <span class="n">Output</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
+
+<span class="n">agent_types</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Reactive&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Direct stimulus-response&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;speed&quot;</span><span class="p">:</span> <span class="s2">&quot;⚡ Very Fast&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;memory&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;planning&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;example&quot;</span><span class="p">:</span> <span class="s2">&quot;Ant colony behavior, simple robots&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;code_example&quot;</span><span class="p">:</span> <span class="s2">&quot;if temperature &gt; 25:</span><span class="se">\n</span><span class="s2">    turn_ac_on()&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Deliberative&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Planning-based decision making&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;speed&quot;</span><span class="p">:</span> <span class="s2">&quot;🐢 Slow&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;memory&quot;</span><span class="p">:</span> <span class="s2">&quot;Full world model&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;planning&quot;</span><span class="p">:</span> <span class="s2">&quot;Extensive&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;example&quot;</span><span class="p">:</span> <span class="s2">&quot;Chess AI, route planning&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;code_example&quot;</span><span class="p">:</span> <span class="s2">&quot;plan = search_for_goal(world_model)</span><span class="se">\n</span><span class="s2">execute_plan(plan)&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Hybrid&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Reactive layer + deliberative layer&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;speed&quot;</span><span class="p">:</span> <span class="s2">&quot;⚡ Fast with planning&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;memory&quot;</span><span class="p">:</span> <span class="s2">&quot;Selective memory&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;planning&quot;</span><span class="p">:</span> <span class="s2">&quot;Strategic&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;example&quot;</span><span class="p">:</span> <span class="s2">&quot;Self-driving cars, game AI&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;code_example&quot;</span><span class="p">:</span> <span class="s2">&quot;react_to_immediate_threats()</span><span class="se">\n</span><span class="s2">plan_long_term_strategy()&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">show_agent_type</span><span class="p">(</span><span class="n">agent_type</span><span class="p">):</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="n">agent_types</span><span class="p">[</span><span class="n">agent_type</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="s1">&#39;=&#39;</span><span class="o">*</span><span class="mi">60</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🤖 </span><span class="si">{</span><span class="n">agent_type</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2"> AGENT&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;=&#39;</span><span class="o">*</span><span class="mi">60</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Description: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Speed: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;speed&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Memory: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;memory&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Planning Capability: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;planning&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Real-world Example: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;example&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Code Pattern:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;```python&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;code_example&#39;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;```&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;=&#39;</span><span class="o">*</span><span class="mi">60</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create interactive widget</span>
+<span class="n">agent_selector</span> <span class="o">=</span> <span class="n">RadioButtons</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Reactive&quot;</span><span class="p">,</span> <span class="s2">&quot;Deliberative&quot;</span><span class="p">,</span> <span class="s2">&quot;Hybrid&quot;</span><span class="p">],</span>
+    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;Reactive&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Choose Agent Type:&#39;</span>
+<span class="p">)</span>
+
+<span class="n">interactive</span><span class="p">(</span><span class="n">show_agent_type</span><span class="p">,</span> <span class="n">agent_type</span><span class="o">=</span><span class="n">agent_selector</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "11306ed1cd97408ca8fd850d8ca56508"}</script></div>
+</div>
+</section>
+</section>
+<section id="agent-architecture-and-components">
+<h2>3. Agent Architecture and Components<a class="headerlink" href="#agent-architecture-and-components" title="Permalink to this heading">#</a></h2>
+<p>Every agent has core components that work together:</p>
+<section id="the-four-essential-components">
+<h3>The Four Essential Components<a class="headerlink" href="#the-four-essential-components" title="Permalink to this heading">#</a></h3>
+<section id="sensors-perception-module">
+<h4>1. <strong>Sensors</strong> (Perception Module)<a class="headerlink" href="#sensors-perception-module" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Collect information from the environment</p></li>
+<li><p>Convert real-world signals into data the agent understands</p></li>
+<li><p>Examples: cameras, temperature sensors, user input, APIs</p></li>
+</ul>
+</section>
+<section id="decision-engine-brain">
+<h4>2. <strong>Decision Engine</strong> (Brain)<a class="headerlink" href="#decision-engine-brain" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Processes sensor data using rules, ML models, or reasoning algorithms</p></li>
+<li><p>Decides what action to take based on goals and constraints</p></li>
+<li><p>Examples: neural networks, decision trees, logic systems</p></li>
+</ul>
+</section>
+<section id="actuators-action-module">
+<h4>3. <strong>Actuators</strong> (Action Module)<a class="headerlink" href="#actuators-action-module" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Execute decisions in the physical or digital world</p></li>
+<li><p>Convert agent decisions into environmental changes</p></li>
+<li><p>Examples: motors, displays, API calls, network requests</p></li>
+</ul>
+</section>
+<section id="memory-knowledge-base">
+<h4>4. <strong>Memory</strong> (Knowledge Base)<a class="headerlink" href="#memory-knowledge-base" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Stores past experiences and learned information</p></li>
+<li><p>Enables agents to recognize patterns and improve over time</p></li>
+<li><p>Examples: experience history, learned models, world state representation</p></li>
+</ul>
+</section>
+</section>
+<section id="how-they-connect">
+<h3>How They Connect<a class="headerlink" href="#how-they-connect" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Interactive: Build and Visualize an Agent Architecture</span>
+<span class="c1"># Toggle components on/off to see how they interact</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Checkbox</span><span class="p">,</span> <span class="n">HBox</span><span class="p">,</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">Output</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">AgentComponent</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">description</span><span class="p">,</span> <span class="n">icon</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">icon</span> <span class="o">=</span> <span class="n">icon</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># Define components</span>
+<span class="n">components</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;sensors&quot;</span><span class="p">:</span> <span class="n">AgentComponent</span><span class="p">(</span><span class="s2">&quot;Sensors&quot;</span><span class="p">,</span> <span class="s2">&quot;Perceives environment (cameras, data, APIs)&quot;</span><span class="p">,</span> <span class="s2">&quot;👁️&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;memory&quot;</span><span class="p">:</span> <span class="n">AgentComponent</span><span class="p">(</span><span class="s2">&quot;Memory&quot;</span><span class="p">,</span> <span class="s2">&quot;Stores experiences and learned patterns&quot;</span><span class="p">,</span> <span class="s2">&quot;🧠&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;decision&quot;</span><span class="p">:</span> <span class="n">AgentComponent</span><span class="p">(</span><span class="s2">&quot;Decision Engine&quot;</span><span class="p">,</span> <span class="s2">&quot;Processes info and chooses actions&quot;</span><span class="p">,</span> <span class="s2">&quot;⚙️&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;actuators&quot;</span><span class="p">:</span> <span class="n">AgentComponent</span><span class="p">(</span><span class="s2">&quot;Actuators&quot;</span><span class="p">,</span> <span class="s2">&quot;Executes actions in the world&quot;</span><span class="p">,</span> <span class="s2">&quot;💪&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">Output</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">visualize_architecture</span><span class="p">(</span><span class="n">show_sensors</span><span class="p">,</span> <span class="n">show_memory</span><span class="p">,</span> <span class="n">show_decision</span><span class="p">,</span> <span class="n">show_actuators</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        
+        <span class="n">enabled</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;sensors&quot;</span><span class="p">:</span> <span class="n">show_sensors</span><span class="p">,</span>
+            <span class="s2">&quot;memory&quot;</span><span class="p">:</span> <span class="n">show_memory</span><span class="p">,</span>
+            <span class="s2">&quot;decision&quot;</span><span class="p">:</span> <span class="n">show_decision</span><span class="p">,</span>
+            <span class="s2">&quot;actuators&quot;</span><span class="p">:</span> <span class="n">show_actuators</span>
+        <span class="p">}</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🏗️  AGENT ARCHITECTURE VISUALIZATION&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">60</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Visualization</span>
+        <span class="n">active_components</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">if</span> <span class="n">enabled</span><span class="p">[</span><span class="s2">&quot;sensors&quot;</span><span class="p">]:</span>
+            <span class="n">active_components</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;👁️  SENSORS → Read environment&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">enabled</span><span class="p">[</span><span class="s2">&quot;memory&quot;</span><span class="p">]:</span>
+            <span class="n">active_components</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;🧠  MEMORY ← Store experiences&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">enabled</span><span class="p">[</span><span class="s2">&quot;decision&quot;</span><span class="p">]:</span>
+            <span class="n">active_components</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;⚙️  DECISION ENGINE ← Process &amp; decide&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">enabled</span><span class="p">[</span><span class="s2">&quot;actuators&quot;</span><span class="p">]:</span>
+            <span class="n">active_components</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;💪  ACTUATORS ← Execute actions&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">active_components</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;❌ Select at least one component!&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="n">active_components</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">comp</span><span class="p">)</span>
+            
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Flow: &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            
+            <span class="n">flow_parts</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">if</span> <span class="n">enabled</span><span class="p">[</span><span class="s2">&quot;sensors&quot;</span><span class="p">]:</span>
+                <span class="n">flow_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Percept&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">enabled</span><span class="p">[</span><span class="s2">&quot;decision&quot;</span><span class="p">]:</span>
+                <span class="n">flow_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Decide&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">enabled</span><span class="p">[</span><span class="s2">&quot;actuators&quot;</span><span class="p">]:</span>
+                <span class="n">flow_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Act&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">enabled</span><span class="p">[</span><span class="s2">&quot;memory&quot;</span><span class="p">]:</span>
+                <span class="n">flow_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Learn&quot;</span><span class="p">)</span>
+            
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; → &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">flow_parts</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="mi">60</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Show status</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Agent is ACTIVE&quot;</span> <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">enabled</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="k">else</span> <span class="s2">&quot;⚠️  Agent is INCOMPLETE&quot;</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">60</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create checkboxes</span>
+<span class="n">checkboxes</span> <span class="o">=</span> <span class="n">VBox</span><span class="p">([</span>
+    <span class="n">Checkbox</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Sensors&#39;</span><span class="p">),</span>
+    <span class="n">Checkbox</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Memory&#39;</span><span class="p">),</span>
+    <span class="n">Checkbox</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Decision Engine&#39;</span><span class="p">),</span>
+    <span class="n">Checkbox</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Actuators&#39;</span><span class="p">),</span>
+<span class="p">])</span>
+
+<span class="c1"># Create interactive visualization</span>
+<span class="n">interactive_plot</span> <span class="o">=</span> <span class="n">interactive</span><span class="p">(</span>
+    <span class="n">visualize_architecture</span><span class="p">,</span>
+    <span class="n">show_sensors</span><span class="o">=</span><span class="n">checkboxes</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">show_memory</span><span class="o">=</span><span class="n">checkboxes</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+    <span class="n">show_decision</span><span class="o">=</span><span class="n">checkboxes</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+    <span class="n">show_actuators</span><span class="o">=</span><span class="n">checkboxes</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">VBox</span><span class="p">([</span>
+    <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;b&gt;Toggle components to see architecture:&lt;/b&gt;&quot;</span><span class="p">),</span>
+    <span class="n">checkboxes</span><span class="p">,</span>
+    <span class="n">output</span>
+<span class="p">]))</span>
+
+<span class="c1"># Run initial visualization</span>
+<span class="n">visualize_architecture</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "c4efc71ca325492bab8f6dd3d21fcf20"}</script></div>
+</div>
+</section>
+</section>
+<section id="building-a-simple-reactive-agent">
+<h2>4. Building a Simple Reactive Agent<a class="headerlink" href="#building-a-simple-reactive-agent" title="Permalink to this heading">#</a></h2>
+<p>Let’s build our first agent! We’ll create a <strong>smart thermostat agent</strong> that maintains room temperature.</p>
+<section id="the-agent-s-task">
+<h3>The Agent’s Task:<a class="headerlink" href="#the-agent-s-task" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Goal</strong>: Keep room temperature between 20-25°C</p></li>
+<li><p><strong>Type</strong>: Reactive agent (direct stimulus-response)</p></li>
+<li><p><strong>Sensors</strong>: Temperature sensor</p></li>
+<li><p><strong>Actuators</strong>: Heater and AC unit</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ThermostatAgent</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A simple reactive agent that controls room temperature.</span>
+<span class="sd">    </span>
+<span class="sd">    This agent:</span>
+<span class="sd">    1. Perceives the current temperature</span>
+<span class="sd">    2. Decides what to do based on rules</span>
+<span class="sd">    3. Acts by turning heating/cooling on or off</span>
+<span class="sd">    4. Learns nothing (reactive agent)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_min</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">target_max</span><span class="o">=</span><span class="mi">25</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_min</span> <span class="o">=</span> <span class="n">target_min</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_max</span> <span class="o">=</span> <span class="n">target_max</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">heating_on</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cooling_on</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">action_history</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">perceive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current_temp</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Step 1: Sense the environment&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">current_temp</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">decide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current_temp</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Step 2: Use rules to decide what to do&quot;&quot;&quot;</span>
+        
+        <span class="k">if</span> <span class="n">current_temp</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_min</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;HEAT&quot;</span>
+        <span class="k">elif</span> <span class="n">current_temp</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_max</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;COOL&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;IDLE&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">act</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Step 3: Execute the action&quot;&quot;&quot;</span>
+        
+        <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;HEAT&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">heating_on</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cooling_on</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">effect</span> <span class="o">=</span> <span class="s2">&quot;🔥 Heating turned ON&quot;</span>
+        <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;COOL&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">heating_on</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cooling_on</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">effect</span> <span class="o">=</span> <span class="s2">&quot;❄️  Cooling turned ON&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">heating_on</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cooling_on</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">effect</span> <span class="o">=</span> <span class="s2">&quot;✅ Both systems OFF (comfortable!)&quot;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">action_history</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">effect</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current_temp</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Execute one complete agent cycle: Perceive → Decide → Act&quot;&quot;&quot;</span>
+        
+        <span class="n">percept</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">perceive</span><span class="p">(</span><span class="n">current_temp</span><span class="p">)</span>
+        <span class="n">action</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decide</span><span class="p">(</span><span class="n">percept</span><span class="p">)</span>
+        <span class="n">effect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">act</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="n">percept</span><span class="p">,</span>
+            <span class="s2">&quot;decision&quot;</span><span class="p">:</span> <span class="n">action</span><span class="p">,</span>
+            <span class="s2">&quot;effect&quot;</span><span class="p">:</span> <span class="n">effect</span>
+        <span class="p">}</span>
+
+<span class="c1"># Create an agent instance</span>
+<span class="n">thermostat</span> <span class="o">=</span> <span class="n">ThermostatAgent</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🏠 Smart Thermostat Agent Demo&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Target Temperature Range: 20-25°C</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test the agent with different temperatures</span>
+<span class="n">test_temps</span> <span class="o">=</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">temp</span> <span class="ow">in</span> <span class="n">test_temps</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">thermostat</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current Temp: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;temperature&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">°C&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Decision: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;decision&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Action: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;effect&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total actions taken: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">thermostat</span><span class="o">.</span><span class="n">action_history</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🏠 Smart Thermostat Agent Demo
+============================================================
+Target Temperature Range: 20-25°C
+
+Current Temp: 18°C
+Decision: HEAT
+Action: 🔥 Heating turned ON
+
+Current Temp: 20°C
+Decision: IDLE
+Action: ✅ Both systems OFF (comfortable!)
+
+Current Temp: 22°C
+Decision: IDLE
+Action: ✅ Both systems OFF (comfortable!)
+
+Current Temp: 25°C
+Decision: IDLE
+Action: ✅ Both systems OFF (comfortable!)
+
+Current Temp: 28°C
+Decision: COOL
+Action: ❄️  Cooling turned ON
+
+Current Temp: 25°C
+Decision: IDLE
+Action: ✅ Both systems OFF (comfortable!)
+
+Current Temp: 22°C
+Decision: IDLE
+Action: ✅ Both systems OFF (comfortable!)
+
+============================================================
+Total actions taken: 7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Interactive: Customize the Thermostat Agent!</span>
+<span class="c1"># Modify the temperature thresholds and see how the agent responds</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">FloatSlider</span><span class="p">,</span> <span class="n">Button</span><span class="p">,</span> <span class="n">Output</span><span class="p">,</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">HBox</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
+
+<span class="c1"># Create sliders for user input</span>
+<span class="n">min_temp_slider</span> <span class="o">=</span> <span class="n">FloatSlider</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Min Temp (°C):&#39;</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="n">max_temp_slider</span> <span class="o">=</span> <span class="n">FloatSlider</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Max Temp (°C):&#39;</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="n">current_temp_slider</span> <span class="o">=</span> <span class="n">FloatSlider</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Current Temp (°C):&#39;</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">Output</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">test_thermostat</span><span class="p">(</span><span class="n">min_temp</span><span class="p">,</span> <span class="n">max_temp</span><span class="p">,</span> <span class="n">current_temp</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        
+        <span class="c1"># Validate inputs</span>
+        <span class="k">if</span> <span class="n">min_temp</span> <span class="o">&gt;=</span> <span class="n">max_temp</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;❌ Error: Min temperature must be less than Max!&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        
+        <span class="c1"># Create agent with custom parameters</span>
+        <span class="n">agent</span> <span class="o">=</span> <span class="n">ThermostatAgent</span><span class="p">(</span><span class="n">target_min</span><span class="o">=</span><span class="n">min_temp</span><span class="p">,</span> <span class="n">target_max</span><span class="o">=</span><span class="n">max_temp</span><span class="p">)</span>
+        
+        <span class="c1"># Run the agent</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">current_temp</span><span class="p">)</span>
+        
+        <span class="c1"># Display results</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🤖 AGENT RESPONSE&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📊 Target Range: </span><span class="si">{</span><span class="n">min_temp</span><span class="si">}</span><span class="s2">°C - </span><span class="si">{</span><span class="n">max_temp</span><span class="si">}</span><span class="s2">°C&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📈 Current Temp: </span><span class="si">{</span><span class="n">current_temp</span><span class="si">}</span><span class="s2">°C&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🧠 Agent&#39;s Decision: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;decision&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⚡ Action Taken: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;effect&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Show reasoning</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">📝 Agent Reasoning:&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">current_temp</span> <span class="o">&lt;</span> <span class="n">min_temp</span><span class="p">:</span>
+            <span class="n">temp_diff</span> <span class="o">=</span> <span class="n">min_temp</span> <span class="o">-</span> <span class="n">current_temp</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   → Too cold by </span><span class="si">{</span><span class="n">temp_diff</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">°C → Activate heating!&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">current_temp</span> <span class="o">&gt;</span> <span class="n">max_temp</span><span class="p">:</span>
+            <span class="n">temp_diff</span> <span class="o">=</span> <span class="n">current_temp</span> <span class="o">-</span> <span class="n">max_temp</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   → Too hot by </span><span class="si">{</span><span class="n">temp_diff</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">°C → Activate cooling!&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   → Temperature is in comfort zone → No action needed!&quot;</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">60</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create interactive layout</span>
+<span class="n">test_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Test Agent&#39;</span><span class="p">,</span> <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;info&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">on_test_click</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">test_thermostat</span><span class="p">(</span>
+        <span class="n">min_temp_slider</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+        <span class="n">max_temp_slider</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+        <span class="n">current_temp_slider</span><span class="o">.</span><span class="n">value</span>
+    <span class="p">)</span>
+
+<span class="n">test_button</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">on_test_click</span><span class="p">)</span>
+
+<span class="c1"># Display controls</span>
+<span class="n">display</span><span class="p">(</span><span class="n">VBox</span><span class="p">([</span>
+    <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;b style=&#39;font-size: 14px;&#39;&gt;⚙️ Configure Your Thermostat Agent&lt;/b&gt;&quot;</span><span class="p">),</span>
+    <span class="n">min_temp_slider</span><span class="p">,</span>
+    <span class="n">max_temp_slider</span><span class="p">,</span>
+    <span class="n">current_temp_slider</span><span class="p">,</span>
+    <span class="n">test_button</span><span class="p">,</span>
+    <span class="n">output</span>
+<span class="p">]))</span>
+
+<span class="c1"># Run initial test</span>
+<span class="n">test_thermostat</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "6a16975818934a52bb60efd3ea43d3be"}</script></div>
+</div>
+</section>
+</section>
+<section id="interactive-agent-simulation">
+<h2>5. Interactive Agent Simulation<a class="headerlink" href="#interactive-agent-simulation" title="Permalink to this heading">#</a></h2>
+<p>Now let’s run a <strong>full environmental simulation</strong> where we can observe the agent operating over time. You can control the environment and watch the agent respond in real-time!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">IntSlider</span><span class="p">,</span> <span class="n">Dropdown</span><span class="p">,</span> <span class="n">Button</span><span class="p">,</span> <span class="n">Output</span><span class="p">,</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">HBox</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">EnvironmentSimulator</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Simulates an environment with temperature changes&quot;&quot;&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initial_temp</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">external_pattern</span><span class="o">=</span><span class="s2">&quot;stable&quot;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">initial_temp</span> <span class="o">=</span> <span class="n">initial_temp</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_temp</span> <span class="o">=</span> <span class="n">initial_temp</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">external_pattern</span> <span class="o">=</span> <span class="n">external_pattern</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temperatures</span> <span class="o">=</span> <span class="p">[</span><span class="n">initial_temp</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">actions</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agent</span> <span class="o">=</span> <span class="n">ThermostatAgent</span><span class="p">()</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_external_temp_change</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Simulate external temperature changes based on pattern&quot;&quot;&quot;</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">external_pattern</span> <span class="o">==</span> <span class="s2">&quot;stable&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">external_pattern</span> <span class="o">==</span> <span class="s2">&quot;warming&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.3</span>  <span class="c1"># Gradual warming</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">external_pattern</span> <span class="o">==</span> <span class="s2">&quot;cooling&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mf">0.3</span>  <span class="c1"># Gradual cooling</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">external_pattern</span> <span class="o">==</span> <span class="s2">&quot;chaotic&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">step</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>  <span class="c1"># Sine wave pattern</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">external_pattern</span> <span class="o">==</span> <span class="s2">&quot;morning&quot;</span><span class="p">:</span>
+            <span class="c1"># Simulates waking up at 6am and heating/cooling throughout day</span>
+            <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">step</span> <span class="o">-</span> <span class="mi">6</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">12</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">step_simulation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Run one step of the simulation&quot;&quot;&quot;</span>
+        
+        <span class="c1"># Apply external temperature change</span>
+        <span class="n">external_change</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_external_temp_change</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_temp</span> <span class="o">+=</span> <span class="n">external_change</span>
+        
+        <span class="c1"># Apply agent actions</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_temp</span><span class="p">)</span>
+        
+        <span class="c1"># Apply system effects (heating/cooling impacts)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">heating_on</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current_temp</span> <span class="o">+=</span> <span class="mf">0.8</span>  <span class="c1"># Heating warms up the room</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">cooling_on</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current_temp</span> <span class="o">-=</span> <span class="mf">0.8</span>  <span class="c1"># Cooling cools down the room</span>
+        
+        <span class="c1"># Add some noise</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_temp</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">temperatures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_temp</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">actions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;decision&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">run_simulation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_steps</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Run multiple steps and return data&quot;&quot;&quot;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">temperatures</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">initial_temp</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">actions</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_steps</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">step_simulation</span><span class="p">()</span>
+        
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperatures</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">actions</span>
+
+<span class="c1"># Create simulation controls</span>
+<span class="n">num_steps_slider</span> <span class="o">=</span> <span class="n">IntSlider</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Simulation Steps:&#39;</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="n">pattern_dropdown</span> <span class="o">=</span> <span class="n">Dropdown</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;stable&#39;</span><span class="p">,</span> <span class="s1">&#39;warming&#39;</span><span class="p">,</span> <span class="s1">&#39;cooling&#39;</span><span class="p">,</span> <span class="s1">&#39;chaotic&#39;</span><span class="p">,</span> <span class="s1">&#39;morning&#39;</span><span class="p">],</span>
+    <span class="n">value</span><span class="o">=</span><span class="s1">&#39;stable&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Environment:&#39;</span>
+<span class="p">)</span>
+
+<span class="n">simulation_output</span> <span class="o">=</span> <span class="n">Output</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">run_simulation</span><span class="p">(</span><span class="n">num_steps</span><span class="p">,</span> <span class="n">pattern</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">simulation_output</span><span class="p">:</span>
+        <span class="n">simulation_output</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        
+        <span class="c1"># Run the simulation</span>
+        <span class="n">sim</span> <span class="o">=</span> <span class="n">EnvironmentSimulator</span><span class="p">(</span><span class="n">initial_temp</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">external_pattern</span><span class="o">=</span><span class="n">pattern</span><span class="p">)</span>
+        <span class="n">temps</span><span class="p">,</span> <span class="n">actions</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">run_simulation</span><span class="p">(</span><span class="n">num_steps</span><span class="p">)</span>
+        
+        <span class="c1"># Create visualization</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+        
+        <span class="c1"># Plot 1: Temperature over time</span>
+        <span class="n">steps</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">temps</span><span class="p">))</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">steps</span><span class="p">,</span> <span class="n">temps</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Room Temperature&#39;</span><span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Min Target (20°C)&#39;</span><span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Max Target (25°C)&#39;</span><span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">steps</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Comfort Zone&#39;</span><span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time Step&#39;</span><span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Temperature (°C)&#39;</span><span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;🏠 Thermostat Agent Simulation - </span><span class="si">{</span><span class="n">pattern</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s1"> Environment&#39;</span><span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+        
+        <span class="c1"># Plot 2: Agent actions over time</span>
+        <span class="n">action_map</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;HEAT&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;IDLE&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;COOL&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">}</span>
+        <span class="n">action_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">action_map</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">actions</span><span class="p">]</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span> <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="s1">&#39;green&#39;</span> <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="k">else</span> <span class="s1">&#39;blue&#39;</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">action_values</span><span class="p">]</span>
+        
+        <span class="n">ax2</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">actions</span><span class="p">)),</span> <span class="n">action_values</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+        <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time Step&#39;</span><span class="p">)</span>
+        <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Action&#39;</span><span class="p">)</span>
+        <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Agent Actions Over Time&#39;</span><span class="p">)</span>
+        <span class="n">ax2</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">ax2</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s1">&#39;Cool ❄️&#39;</span><span class="p">,</span> <span class="s1">&#39;Idle ✅&#39;</span><span class="p">,</span> <span class="s1">&#39;Heat 🔥&#39;</span><span class="p">])</span>
+        <span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+        
+        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        
+        <span class="c1"># Print statistics</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;📊 SIMULATION RESULTS&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Environment: </span><span class="si">{</span><span class="n">pattern</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Steps: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">temps</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Temperature Statistics:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Min: </span><span class="si">{</span><span class="nb">min</span><span class="p">(</span><span class="n">temps</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">°C&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Max: </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">temps</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">°C&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Avg: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">temps</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">°C&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Std Dev: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">temps</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">°C&quot;</span><span class="p">)</span>
+        
+        <span class="n">heat_count</span> <span class="o">=</span> <span class="n">actions</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;HEAT&#39;</span><span class="p">)</span>
+        <span class="n">cool_count</span> <span class="o">=</span> <span class="n">actions</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;COOL&#39;</span><span class="p">)</span>
+        <span class="n">idle_count</span> <span class="o">=</span> <span class="n">actions</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;IDLE&#39;</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Agent Actions:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  🔥 Heating: </span><span class="si">{</span><span class="n">heat_count</span><span class="si">}</span><span class="s2"> times (</span><span class="si">{</span><span class="n">heat_count</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">actions</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ❄️ Cooling: </span><span class="si">{</span><span class="n">cool_count</span><span class="si">}</span><span class="s2"> times (</span><span class="si">{</span><span class="n">cool_count</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">actions</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ✅ Idle: </span><span class="si">{</span><span class="n">idle_count</span><span class="si">}</span><span class="s2"> times (</span><span class="si">{</span><span class="n">idle_count</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">actions</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Calculate comfort</span>
+        <span class="n">comfort_steps</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">temps</span> <span class="k">if</span> <span class="mi">20</span> <span class="o">&lt;=</span> <span class="n">t</span> <span class="o">&lt;=</span> <span class="mi">25</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Comfort Analysis:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Steps in comfort zone: </span><span class="si">{</span><span class="n">comfort_steps</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">temps</span><span class="p">)</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">comfort_steps</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">temps</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">60</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create interactive layout</span>
+<span class="n">run_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Run Simulation&#39;</span><span class="p">,</span> <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;success&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">on_run_click</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">run_simulation</span><span class="p">(</span><span class="n">num_steps_slider</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pattern_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+<span class="n">run_button</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">on_run_click</span><span class="p">)</span>
+
+<span class="c1"># Display controls</span>
+<span class="n">display</span><span class="p">(</span><span class="n">VBox</span><span class="p">([</span>
+    <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;b style=&#39;font-size: 14px;&#39;&gt;🔬 Agent Simulation Control Panel&lt;/b&gt;&quot;</span><span class="p">),</span>
+    <span class="n">num_steps_slider</span><span class="p">,</span>
+    <span class="n">pattern_dropdown</span><span class="p">,</span>
+    <span class="n">run_button</span><span class="p">,</span>
+    <span class="n">simulation_output</span>
+<span class="p">]))</span>
+
+<span class="c1"># Run initial simulation</span>
+<span class="n">run_simulation</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;stable&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "54ba17f1cc514333b4b97eac4b9b18a0"}</script></div>
+</div>
+</section>
+<section id="key-takeaways">
+<h2>🎓 Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permalink to this heading">#</a></h2>
+<section id="what-we-learned">
+<h3>What We Learned:<a class="headerlink" href="#what-we-learned" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Agents are Autonomous Systems</strong></p>
+<ul class="simple">
+<li><p>They perceive, decide, and act without explicit human commands</p></li>
+<li><p>They operate in feedback loops, continuously adapting</p></li>
+</ul>
+</li>
+<li><p><strong>Agent Types Vary in Complexity</strong></p>
+<ul class="simple">
+<li><p>Reactive: Fast, simple, no memory</p></li>
+<li><p>Deliberative: Smart planning, slower</p></li>
+<li><p>Hybrid: Best of both worlds</p></li>
+</ul>
+</li>
+<li><p><strong>Components Work Together</strong></p>
+<ul class="simple">
+<li><p>Sensors gather data</p></li>
+<li><p>Decision engine processes it</p></li>
+<li><p>Actuators execute actions</p></li>
+<li><p>Memory enables learning</p></li>
+</ul>
+</li>
+<li><p><strong>Agents Can Be Simple Yet Powerful</strong></p>
+<ul class="simple">
+<li><p>Even our basic thermostat agent makes intelligent decisions</p></li>
+<li><p>The power scales with more complex decision logic</p></li>
+</ul>
+</li>
+<li><p><strong>Testing Reveals Agent Behavior</strong></p>
+<ul class="simple">
+<li><p>Simulations help us understand how agents adapt</p></li>
+<li><p>Different environments require different agent strategies</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="next-steps">
+<h3>Next Steps:<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>✅ Understand what agents are</p></li>
+<li><p>🎯 Next: Build a deliberative agent that plans ahead</p></li>
+<li><p>🧠 Then: Add learning to make agents improve over time</p></li>
+<li><p>🤝 Finally: Create multi-agent systems</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="challenge-exercise">
+<h2>💡 Challenge Exercise<a class="headerlink" href="#challenge-exercise" title="Permalink to this heading">#</a></h2>
+<p><strong>Modify the thermostat agent</strong> to handle a new scenario:</p>
+<ul class="simple">
+<li><p>Add a <strong>“weekend mode”</strong> where the target temperature range is different</p></li>
+<li><p>Implement a <strong>“sleep mode”</strong> that’s triggered at night</p></li>
+<li><p>Make the agent <strong>“learn”</strong> from past experiences to improve comfort</p></li>
+</ul>
+<p>Try implementing one of these extensions in the cell below!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 🚀 Your Challenge: Extend the Thermostat Agent!</span>
+<span class="c1"># Uncomment one of the challenges below and implement it</span>
+
+<span class="c1"># CHALLENGE 1: Weekend Mode</span>
+<span class="c1"># ========================</span>
+<span class="c1"># Modify the ThermostatAgent class to support different temperature ranges</span>
+<span class="c1"># for weekdays vs weekends. The target range should change automatically.</span>
+
+<span class="c1"># def __init__(self, target_min_weekday=20, target_max_weekday=25,</span>
+<span class="c1">#              target_min_weekend=19, target_max_weekend=26):</span>
+<span class="c1">#     # Your code here</span>
+<span class="c1">#     pass</span>
+
+<span class="c1"># def is_weekend(self, hour):</span>
+<span class="c1">#     # Your code here: return True if it&#39;s weekend, False if weekday</span>
+<span class="c1">#     pass</span>
+
+
+<span class="c1"># CHALLENGE 2: Sleep Mode</span>
+<span class="c1"># =======================</span>
+<span class="c1"># Add a &quot;sleep mode&quot; that adjusts the target temperature range based on time</span>
+<span class="c1"># Sleep mode (10 PM - 6 AM): Target 18-22°C (cooler for better sleep)</span>
+<span class="c1"># Awake mode: Target 20-25°C (normal comfort zone)</span>
+
+<span class="c1"># def set_sleep_mode(self, is_sleeping):</span>
+<span class="c1">#     # Your code here</span>
+<span class="c1">#     pass</span>
+
+
+<span class="c1"># CHALLENGE 3: Learning from Experience</span>
+<span class="c1"># ======================================</span>
+<span class="c1"># Add memory to the agent so it learns which actions worked best</span>
+<span class="c1"># Track success: times when the agent achieved comfort zone with minimal action</span>
+
+<span class="c1"># def remember_outcome(self, action, result_temp):</span>
+<span class="c1">#     # Store this experience</span>
+<span class="c1">#     pass</span>
+
+<span class="c1"># def learn_optimal_action(self, current_temp):</span>
+<span class="c1">#     # Use past experience to make better decisions</span>
+<span class="c1">#     pass</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🎯 Ready to extend the agent?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Choose a challenge above and implement your solution!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">📚 Hints:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Challenge 1: Use day of week to switch between configurations&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Challenge 2: Add a mode parameter that affects decision logic&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Challenge 3: Keep a history of (temperature, action, outcome) tuples&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🎯 Ready to extend the agent?
+Choose a challenge above and implement your solution!
+
+📚 Hints:
+- Challenge 1: Use day of week to switch between configurations
+- Challenge 2: Add a mode parameter that affects decision logic
+- Challenge 3: Keep a history of (temperature, action, outcome) tuples
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Agentic Engineering Textbook</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#welcome-to-agentic-engineering">Welcome to Agentic Engineering! 🚀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-ai-agents">1. What Are AI Agents?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-agent-loop">The Agent Loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-makes-an-agent-different">What Makes an Agent Different?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-ai-agents">2. Types of AI Agents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reactive-agents">Reactive Agents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deliberative-agents">Deliberative Agents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-agents">Hybrid Agents</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agent-architecture-and-components">3. Agent Architecture and Components</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-four-essential-components">The Four Essential Components</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sensors-perception-module">1. <strong>Sensors</strong> (Perception Module)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-engine-brain">2. <strong>Decision Engine</strong> (Brain)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#actuators-action-module">3. <strong>Actuators</strong> (Action Module)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-knowledge-base">4. <strong>Memory</strong> (Knowledge Base)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-they-connect">How They Connect</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-simple-reactive-agent">4. Building a Simple Reactive Agent</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-agent-s-task">The Agent’s Task:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-agent-simulation">5. Interactive Agent Simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">🎓 Key Takeaways</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-we-learned">What We Learned:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#challenge-exercise">💡 Challenge Exercise</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By RAGUIUC Agentic AI Club
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,689 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Copilot Instructions for Agentic AI Club Notebook &#8212; Agentic Engineering Textbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "RAGUIUC/agentic-ai-textbook");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'copilot-instructions';</script>
+    <link rel="canonical" href="https://github.com/RAGUIUC/agentic-ai-textbook/copilot-instructions.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Agentic Engineering Textbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Agentic Engineering Textbook
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter_1_What_Are_AI_Agents.html">Chapter 1 - What Are AI Agents?</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/RAGUIUC/agentic-ai-textbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/RAGUIUC/agentic-ai-textbook/issues/new?title=Issue%20on%20page%20%2Fcopilot-instructions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/copilot-instructions.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Copilot Instructions for Agentic AI Club Notebook</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-context">Project Context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-agentic-engineering">What is Agentic Engineering?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-role-as-copilot">Your Role as Copilot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-intent">1. <strong>Understanding Intent</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#planning-tracking">2. <strong>Planning &amp; Tracking</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-gathering">3. <strong>Context Gathering</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-execution">4. <strong>Implementation &amp; Execution</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-mastery">5. <strong>Tool Mastery</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communication">6. <strong>Communication</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-structure">Notebook Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-principles-for-this-club">Key Principles for This Club</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-working-on-exercises">When Working on Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-dependencies">Environment &amp; Dependencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-success">Tips for Success</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remember">Remember</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="copilot-instructions-for-agentic-ai-club-notebook">
+<h1>Copilot Instructions for Agentic AI Club Notebook<a class="headerlink" href="#copilot-instructions-for-agentic-ai-club-notebook" title="Permalink to this heading">#</a></h1>
+<section id="project-context">
+<h2>Project Context<a class="headerlink" href="#project-context" title="Permalink to this heading">#</a></h2>
+<p>This is an <strong>intelligent notebook</strong> designed for the <strong>Agentic AI Club</strong> at RAGUIUC. The primary goal is to teach <strong>agentic engineering</strong> principles—building systems where AI agents autonomously plan, execute, and adapt to complete complex tasks.</p>
+</section>
+<section id="what-is-agentic-engineering">
+<h2>What is Agentic Engineering?<a class="headerlink" href="#what-is-agentic-engineering" title="Permalink to this heading">#</a></h2>
+<p>Agentic engineering involves:</p>
+<ul class="simple">
+<li><p><strong>Autonomous Planning</strong>: Agents break down complex problems into actionable steps</p></li>
+<li><p><strong>Tool Integration</strong>: Leveraging external tools and APIs to gather information and perform actions</p></li>
+<li><p><strong>Iterative Refinement</strong>: Continuously adapting based on feedback and intermediate results</p></li>
+<li><p><strong>Context Management</strong>: Maintaining awareness of project state and dependencies</p></li>
+<li><p><strong>Error Recovery</strong>: Handling unexpected issues gracefully and pivoting strategies</p></li>
+</ul>
+</section>
+<section id="your-role-as-copilot">
+<h2>Your Role as Copilot<a class="headerlink" href="#your-role-as-copilot" title="Permalink to this heading">#</a></h2>
+<p>When working with this notebook, you are an <strong>agentic partner</strong>. Your responsibilities:</p>
+<section id="understanding-intent">
+<h3>1. <strong>Understanding Intent</strong><a class="headerlink" href="#understanding-intent" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Infer the underlying goal when instructions are ambiguous</p></li>
+<li><p>Ask clarifying questions only when truly necessary</p></li>
+<li><p>Proceed with the most reasonable interpretation of the request</p></li>
+</ul>
+</section>
+<section id="planning-tracking">
+<h3>2. <strong>Planning &amp; Tracking</strong><a class="headerlink" href="#planning-tracking" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Break complex tasks into logical, actionable steps</p></li>
+<li><p>Use the todo list to maintain visibility into progress</p></li>
+<li><p>Track dependencies between tasks</p></li>
+<li><p>Update task status as you complete work</p></li>
+</ul>
+</section>
+<section id="context-gathering">
+<h3>3. <strong>Context Gathering</strong><a class="headerlink" href="#context-gathering" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Parallelize independent research operations</p></li>
+<li><p>Use semantic search for exploratory queries</p></li>
+<li><p>Use grep/file search for targeted operations</p></li>
+<li><p>Read sufficient context in a single call rather than multiple small reads</p></li>
+<li><p>Balance thoroughness with forward momentum</p></li>
+</ul>
+</section>
+<section id="implementation-execution">
+<h3>4. <strong>Implementation &amp; Execution</strong><a class="headerlink" href="#implementation-execution" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Implement changes directly rather than just suggesting them</p></li>
+<li><p>Make incremental, testable modifications</p></li>
+<li><p>Validate changes through testing or verification</p></li>
+<li><p>Save progress appropriately at checkpoints</p></li>
+</ul>
+</section>
+<section id="tool-mastery">
+<h3>5. <strong>Tool Mastery</strong><a class="headerlink" href="#tool-mastery" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Leverage available tools effectively and in parallel when possible</p></li>
+<li><p>Understand tool dependencies and chain them intelligently</p></li>
+<li><p>Use the right tool for each task:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">semantic_search</span></code> for exploratory context gathering</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grep_search</span></code> for targeted pattern matching within files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file_search</span></code> for finding files by pattern</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">read_file</span></code> for examining specific content</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">replace_string_in_file</span></code> for precise edits</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run_in_terminal</span></code> for executing commands</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">create_file</span></code> for new file creation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">manage_todo_list</span></code> for task tracking</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="communication">
+<h3>6. <strong>Communication</strong><a class="headerlink" href="#communication" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Keep responses concise and direct</p></li>
+<li><p>Avoid unnecessary framing or explanations</p></li>
+<li><p>Confirm completion briefly rather than elaborating on process</p></li>
+<li><p>Use proper markdown formatting with code blocks and backticks for filenames</p></li>
+</ul>
+</section>
+</section>
+<section id="notebook-structure">
+<h2>Notebook Structure<a class="headerlink" href="#notebook-structure" title="Permalink to this heading">#</a></h2>
+<p>This notebook typically contains:</p>
+<ul class="simple">
+<li><p><strong>Introduction/Context</strong>: Project overview and learning objectives</p></li>
+<li><p><strong>Agent Design</strong>: Exploring how to structure agent behavior and decision-making</p></li>
+<li><p><strong>Tool Integration</strong>: Implementing function calling and tool use</p></li>
+<li><p><strong>Execution Loop</strong>: Implementing the agent’s main loop with planning and acting</p></li>
+<li><p><strong>Testing &amp; Validation</strong>: Evaluating agent performance and reliability</p></li>
+<li><p><strong>Advanced Patterns</strong>: Task tracking, multi-agent coordination, error recovery</p></li>
+</ul>
+</section>
+<section id="key-principles-for-this-club">
+<h2>Key Principles for This Club<a class="headerlink" href="#key-principles-for-this-club" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Learn by Building</strong>: Implement agents hands-on rather than just studying theory</p></li>
+<li><p><strong>Incremental Complexity</strong>: Start with simple agents, progressively add sophistication</p></li>
+<li><p><strong>Real-World Scenarios</strong>: Apply agentic patterns to practical problems</p></li>
+<li><p><strong>Reflection</strong>: Understand why certain patterns work better than others</p></li>
+<li><p><strong>Experimentation</strong>: Test different approaches and compare outcomes</p></li>
+</ol>
+</section>
+<section id="when-working-on-exercises">
+<h2>When Working on Exercises<a class="headerlink" href="#when-working-on-exercises" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Read the full problem</strong> before jumping to implementation</p></li>
+<li><p><strong>Plan your approach</strong> before writing code</p></li>
+<li><p><strong>Test incrementally</strong> as you build</p></li>
+<li><p><strong>Refactor for clarity</strong> once functionality is working</p></li>
+<li><p><strong>Document your reasoning</strong> in markdown cells</p></li>
+</ul>
+</section>
+<section id="environment-dependencies">
+<h2>Environment &amp; Dependencies<a class="headerlink" href="#environment-dependencies" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Language</strong>: Primarily Python for agent implementation</p></li>
+<li><p><strong>Key Libraries</strong>: May include LLM APIs, function calling frameworks, data processing tools</p></li>
+<li><p><strong>Testing</strong>: Unit tests validate agent behavior and tool integration</p></li>
+<li><p><strong>Version Control</strong>: Changes tracked in git for collaborative work</p></li>
+</ul>
+</section>
+<section id="tips-for-success">
+<h2>Tips for Success<a class="headerlink" href="#tips-for-success" title="Permalink to this heading">#</a></h2>
+<p>✓ <strong>Break down agent problems</strong> into perception, planning, and action phases<br />
+✓ <strong>Design robust tool interfaces</strong> that agents can call reliably<br />
+✓ <strong>Implement feedback loops</strong> so agents can learn from outcomes<br />
+✓ <strong>Handle edge cases</strong> - agents encounter unexpected states<br />
+✓ <strong>Monitor agent behavior</strong> - add logging and debugging support<br />
+✓ <strong>Iterate on prompts</strong> - agent instructions significantly impact performance</p>
+</section>
+<section id="remember">
+<h2>Remember<a class="headerlink" href="#remember" title="Permalink to this heading">#</a></h2>
+<p>You’re not just answering questions—you’re <strong>demonstrating agentic engineering</strong> through your own problem-solving. Show the same planning, adaptation, and tool mastery that we’re teaching here.</p>
+<p>Good luck, and happy engineering! 🚀</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-context">Project Context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-agentic-engineering">What is Agentic Engineering?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-role-as-copilot">Your Role as Copilot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-intent">1. <strong>Understanding Intent</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#planning-tracking">2. <strong>Planning &amp; Tracking</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-gathering">3. <strong>Context Gathering</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-execution">4. <strong>Implementation &amp; Execution</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-mastery">5. <strong>Tool Mastery</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communication">6. <strong>Communication</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-structure">Notebook Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-principles-for-this-club">Key Principles for This Club</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-working-on-exercises">When Working on Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-dependencies">Environment &amp; Dependencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-success">Tips for Success</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remember">Remember</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By RAGUIUC Agentic AI Club
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
